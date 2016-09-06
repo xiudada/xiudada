@@ -10,7 +10,7 @@ using Owin;
 namespace XH.APIs.WebAPI
 {
     /// <summary>
-    /// Start up
+    /// Startup
     /// </summary>
     public class Startup
     {

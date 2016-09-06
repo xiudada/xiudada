@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3008A7D0-C5AC-4E09-A05C-34785C1A1C67}</ProjectGuid>
+    <ProjectGuid>{B49FEBF9-2949-42BB-B925-2D37A732DC64}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XH.Infrastructure</RootNamespace>
-    <AssemblyName>XH.Infrastructure</AssemblyName>
+    <RootNamespace>XH.Domain.Models</RootNamespace>
+    <AssemblyName>XH.Domain.Models</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,8 +32,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Caching" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,21 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Caching\ICacheManager.cs" />
-    <Compile Include="Caching\MemoryCacheManager.cs" />
-    <Compile Include="Caching\PerRequestCacheManager.cs" />
-    <Compile Include="Domain\Models\AudiableEntityBase.cs" />
-    <Compile Include="Domain\Models\EntityBase.cs" />
-    <Compile Include="Domain\Models\FullAuditableEntityBase.cs" />
-    <Compile Include="Domain\Models\IAuditableEntity.cs" />
-    <Compile Include="Domain\Models\IEntity.cs" />
-    <Compile Include="Domain\Models\IFullAuditableEntity.cs" />
-    <Compile Include="Domain\Models\ISoftDeletableEntity.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Articles\Category.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Utility\" />
+    <Folder Include="Settings\" />
+    <Folder Include="Users\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\XH.Infrastructure\XH.Infrastructure.csproj">
+      <Project>{3008a7d0-c5ac-4e09-a05c-34785c1a1c67}</Project>
+      <Name>XH.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

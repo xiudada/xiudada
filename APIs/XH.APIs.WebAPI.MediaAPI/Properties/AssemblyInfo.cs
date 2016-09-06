@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过下列特性集
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("XH.APIs.WebAPI")]
+[assembly: AssemblyTitle("XH.APIs.WebAPI.MediaAPI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("XH.APIs.WebAPI")]
+[assembly: AssemblyProduct("XH.APIs.WebAPI.MediaAPI")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于 typelib 的 ID
-[assembly: Guid("68eba63d-7800-4d47-bf2e-c0cf4a513f0a")]
+[assembly: Guid("8f355e7b-ec52-4595-8ec8-c5dea6439080")]
 
 // 程序集的版本信息由下列四个值组成:
 //

@@ -8,7 +8,7 @@ using Owin;
 namespace XH.APIs.WebAPI
 {
     /// <summary>
-    /// Owin config
+    /// OWIN config
     /// </summary>
     public class OwinConfig
     {
@@ -16,10 +16,13 @@ namespace XH.APIs.WebAPI
         /// Configure
         /// </summary>
         /// <param name="app"></param>
+        /// <param name="config"></param>
         public static void Configure(IAppBuilder app, HttpConfiguration config)
         {
             config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
             WebApiConfig.Register(config);
+
+            app.UseWebApi(config);
         }
     }
 }

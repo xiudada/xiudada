@@ -19,23 +19,22 @@ namespace XH.APIs.WebAPI
         /// <param name="config"></param>
         public static void Register(HttpConfiguration config)
         {
-            // Cors config
-            //EnableCorsAttribute enableCorsAttribute = new EnableCorsAttribute("*", "*", "*", "*");
-            //enableCorsAttribute.SupportsCredentials = true;
-            //enableCorsAttribute.PreflightMaxAge = 60;
-            //config.EnableCors(enableCorsAttribute);
+            //// Web API 配置和服务
+            EnableCorsAttribute enableCorsAttribute = new EnableCorsAttribute("*", "*", "*", "*");
+            enableCorsAttribute.SupportsCredentials = true;
+            enableCorsAttribute.PreflightMaxAge = 60;
+            config.EnableCors(enableCorsAttribute);
 
-            //// Config json format
-            //// Configure default json formatter
-            //JsonMediaTypeFormatter jsonFormatter = config.Formatters.JsonFormatter;
-            //jsonFormatter.SerializerSettings.Converters.Add(new StringEnumConverter());
+            // Format
+            JsonMediaTypeFormatter jsonFormatter = config.Formatters.JsonFormatter;
+            jsonFormatter.SerializerSettings.Converters.Add(new StringEnumConverter());
 
-            // Route
+            // Web API 路由
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "{controller}/{id}",
+                routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
         }
