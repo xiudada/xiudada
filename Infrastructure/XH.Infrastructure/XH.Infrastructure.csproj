@@ -56,8 +56,6 @@
     <Compile Include="Email\EmailAttachment.cs" />
     <Compile Include="Email\EmailMessage.cs" />
     <Compile Include="Email\IEmailProvider.cs" />
-    <Compile Include="Email\IUrlReferrerProvider.cs" />
-    <Compile Include="Email\UrlReferrerProvider.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
