@@ -52,6 +52,10 @@
     <Compile Include="Domain\Models\IEntity.cs" />
     <Compile Include="Domain\Models\IFullAuditableEntity.cs" />
     <Compile Include="Domain\Models\ISoftDeletableEntity.cs" />
+    <Compile Include="Email\EmailAddress.cs" />
+    <Compile Include="Email\EmailAttachment.cs" />
+    <Compile Include="Email\EmailMessage.cs" />
+    <Compile Include="Email\IEmailProvider.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

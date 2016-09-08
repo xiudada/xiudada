@@ -17,6 +17,11 @@ namespace XH.Infrastructure.Domain.Models
         public virtual TPrimaryKey Id { get; protected set; }
 
         /// <summary>
+        /// Version handling versioning and concurrency
+        /// </summary>
+        public virtual int Version { get; set; }
+
+        /// <summary>
         /// Equals
         /// </summary>
         /// <param name="obj"></param>
