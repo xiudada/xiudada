@@ -97,14 +97,14 @@ namespace XH.Infrastructure.Domain.Models
     /// <summary>
     /// Base entity
     /// </summary>
-    public abstract class EntityBase : EntityBase<Guid>
+    public abstract class EntityBase : EntityBase<string>
     {
         /// <summary>
         /// Constuctor
         /// </summary>
         protected EntityBase()
         {
-            Id = Guid.NewGuid();
+            Id = Guid.NewGuid().ToString();
         }
     }
 }
