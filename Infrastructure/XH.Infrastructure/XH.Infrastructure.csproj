@@ -56,6 +56,7 @@
     <Compile Include="Email\EmailAttachment.cs" />
     <Compile Include="Email\EmailMessage.cs" />
     <Compile Include="Email\IEmailProvider.cs" />
+    <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

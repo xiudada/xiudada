@@ -9,7 +9,7 @@ namespace XH.Infrastructure.Domain.Models
     /// <summary>
     /// Auditable entity base
     /// </summary>
-    public abstract class AuditableEntityBase : EntityBase, IAuditableEntity
+    public abstract class AuditableBaseEntity : BaseEntity, IAuditableEntity
     {
         /// <summary>
         /// Created on
