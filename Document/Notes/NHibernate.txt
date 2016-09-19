@@ -1,0 +1,10 @@
+NH常用默认配置：
+name对应model中的Property,column 对应table中的列名；
+默认column name等于property name;
+
+mappping files ends with ".hbm.xml";
+property type 可以省略，可以从Model的类型中推断；
+not-null="false";
+db中table name默认与model的class name一样。
+natural id: unique,not null
+所有public 属性，方法都要标记为virtual

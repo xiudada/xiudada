@@ -9,7 +9,7 @@ namespace XH.Infrastructure.Domain.Models
     /// <summary>
     /// Full auditable entity base
     /// </summary>
-    public abstract class FullAuditableEntityBase : AuditableEntityBase, IFullAuditableEntity
+    public abstract class FullAuditableBaseEntity : AuditableBaseEntity, IFullAuditableEntity
     {
         /// <summary>
         /// Is deleted
