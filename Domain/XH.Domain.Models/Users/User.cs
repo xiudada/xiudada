@@ -10,7 +10,7 @@ namespace XH.Domain.Models.Users
     /// <summary>
     /// User
     /// </summary>
-    public class User : FullAuditableEntityBase
+    public class User : FullAuditableBaseEntity
     {
         /// <summary>
         /// Name

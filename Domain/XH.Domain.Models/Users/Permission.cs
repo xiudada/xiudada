@@ -10,7 +10,7 @@ namespace XH.Domain.Models.Users
     /// <summary>
     /// Permission
     /// </summary>
-    public class Permission : EntityBase
+    public class Permission : BaseEntity
     {
         /// <summary>
         /// Permission name
