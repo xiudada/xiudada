@@ -11,6 +11,7 @@
     <div class="container body-content">
         @RenderBody()
     </div>
+    @Scripts.Render("~/scripts/core");
     @Scripts.Render("~/scripts/jquery")
     @Scripts.Render("~/scripts/angularjs")
     @RenderSection("UsingScript", required: false)

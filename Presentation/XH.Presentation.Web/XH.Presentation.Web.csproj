@@ -938,6 +938,8 @@
     <Content Include="Scripts\app\modules\app.js" />
     <Content Include="Scripts\app\modules\home\controllers\homeController.js" />
     <Content Include="Scripts\app\modules\router.js" />
+    <Content Include="Scripts\extensions\StringExtension.js" />
+    <Content Include="Scripts\utility.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Templates\Home\index.tpl.html" />
     <Content Include="Web.config" />
@@ -955,6 +957,7 @@
     <Folder Include="Assets\fonts\" />
     <Folder Include="Assets\images\" />
     <Folder Include="Assets\plugins\angularjs\i18n\ngLocale\" />
+    <Folder Include="Assets\plugins\jasmine\" />
     <Folder Include="Assets\scripts\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\app\modules\shared\directives\" />
@@ -986,6 +989,9 @@
     <Content Include="Assets\plugins\angularjs\angular.min.js.map" />
     <Content Include="Assets\plugins\angularjs\errors.json" />
     <Content Include="Assets\plugins\angularjs\version.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\JsTest.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

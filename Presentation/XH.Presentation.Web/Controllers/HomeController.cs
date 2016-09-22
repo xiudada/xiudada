@@ -26,5 +26,14 @@ namespace XH.Presentation.Web.Controllers
 
             return View();
         }
+
+        /// <summary>
+        /// Js test
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult JsTest()
+        {
+            return View();
+        }
     }
 }

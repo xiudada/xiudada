@@ -9,6 +9,11 @@ namespace XH.Presentation.Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(
+                new ScriptBundle("~/scripts/core")
+                .IncludeDirectory("~/scripts/extensions", "*.js", true)
+                .Include("~/scripts/utility.js"));
+
+            bundles.Add(
                 new ScriptBundle("~/scripts/jquery").Include(
                     "~/assets/plugins/jquery.min.js"
                     ));

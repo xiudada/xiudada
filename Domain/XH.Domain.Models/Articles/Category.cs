@@ -10,7 +10,7 @@ namespace XH.Domain.Models.Article
     /// <summary>
     /// Category
     /// </summary>
-    public class Category : FullAuditableEntityBase
+    public class Category : FullAuditableBaseEntity
     {
         /// <summary>
         /// Name
