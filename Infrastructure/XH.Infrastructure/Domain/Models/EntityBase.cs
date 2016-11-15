@@ -9,7 +9,7 @@ namespace XH.Infrastructure.Domain.Models
     /// <summary>
     /// Base entity
     /// </summary>
-    public abstract class BaseEntity<TPrimaryKey>
+    public abstract class EntityBase<TPrimaryKey>
     {
         /// <summary>
         /// Id
@@ -28,7 +28,7 @@ namespace XH.Infrastructure.Domain.Models
         /// <returns></returns>
         public override bool Equals(object obj)
         {
-            return Equals(obj as BaseEntity<TPrimaryKey>);
+            return Equals(obj as EntityBase<TPrimaryKey>);
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace XH.Infrastructure.Domain.Models
         /// </summary>
         /// <param name="other"></param>
         /// <returns></returns>
-        public virtual bool Equals(BaseEntity<TPrimaryKey> other)
+        public virtual bool Equals(EntityBase<TPrimaryKey> other)
         {
             if (other == null)
             {
@@ -79,7 +79,7 @@ namespace XH.Infrastructure.Domain.Models
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
-        private static bool IsTransient(BaseEntity<TPrimaryKey> obj)
+        private static bool IsTransient(EntityBase<TPrimaryKey> obj)
         {
             return obj != null && Equals(obj.Id, default(TPrimaryKey));
         }
@@ -99,7 +99,7 @@ namespace XH.Infrastructure.Domain.Models
         /// <param name="x"></param>
         /// <param name="y"></param>
         /// <returns></returns>
-        public static bool operator ==(BaseEntity<TPrimaryKey> x, BaseEntity<TPrimaryKey> y)
+        public static bool operator ==(EntityBase<TPrimaryKey> x, EntityBase<TPrimaryKey> y)
         {
             return Equals(x, y);
         }
@@ -110,7 +110,7 @@ namespace XH.Infrastructure.Domain.Models
         /// <param name="x"></param>
         /// <param name="y"></param>
         /// <returns></returns>
-        public static bool operator !=(BaseEntity<TPrimaryKey> x, BaseEntity<TPrimaryKey> y)
+        public static bool operator !=(EntityBase<TPrimaryKey> x, EntityBase<TPrimaryKey> y)
         {
             return !(x == y);
         }
@@ -119,12 +119,12 @@ namespace XH.Infrastructure.Domain.Models
     /// <summary>
     /// Base entity
     /// </summary>
-    public abstract class BaseEntity : BaseEntity<string>
+    public abstract class EntityBase : EntityBase<string>
     {
         /// <summary>
         /// Constuctor
         /// </summary>
-        protected BaseEntity()
+        protected EntityBase()
         {
             Id = Guid.NewGuid().ToString();
         }

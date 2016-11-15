@@ -1,5 +1,11 @@
 ﻿@{
     ViewBag.Title = "JsTest";
 }
+<h2>Js test</h2>
 
+@section UsingScript{
+    <script src="~/Scripts/jstest.js"></script>
+}
 
+<h3>Session:@Session.SessionID</h3>
+<h3>Host:@Request.Url.Host</h3>

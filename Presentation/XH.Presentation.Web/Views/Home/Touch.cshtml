@@ -1,0 +1,67 @@
+﻿@{
+    Layout = null;
+}
+<style>
+    .sub-touch-area,
+    .touch-area {
+        width: 80%;
+        min-height: 300px;
+        border: 1px solid #eee;
+    }
+
+    .sub-touch-area {
+        width: 50%;
+        min-height: 150px;
+        margin-top: 20%;
+    }
+</style>
+<div class="touch-area">
+    <div class="sub-touch-area">
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        var events = [
+            "touchstart",
+            "mouseover",
+            "mousemove",
+            "mousedown",
+            "mouseup",
+            "click",
+            "touchend",
+            "touchmove"
+        ];
+
+        var $el = $(".touch-area"),
+            $subEl = $(".sub-touch-area");
+
+        events.sort(function (a, b) {
+            return Math.random() - 0.5;
+        });
+
+        for (var i = 0, len = events.length; i < len; i++) {
+            $el.on(events[i], function (e) {
+                console.log(e.type + "  phase: " + e.eventPhase + "  cancelable:" + e.cancelable);
+            });
+        }
+
+    });
+
+
+    function Person() {
+
+    }
+
+    Person.prototype = {
+        name:"test"
+    };
+
+    var p1 = new Person();
+
+    console.log(p1.name);
+
+
+    console.log(p1 instanceof Person);
+</script>

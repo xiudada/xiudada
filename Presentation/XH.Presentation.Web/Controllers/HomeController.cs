@@ -33,6 +33,16 @@ namespace XH.Presentation.Web.Controllers
         /// <returns></returns>
         public ActionResult JsTest()
         {
+            Session["test"] = 1234;
+            return View();
+        }
+
+        /// <summary>
+        /// Gallery
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Gallery()
+        {
             return View();
         }
     }

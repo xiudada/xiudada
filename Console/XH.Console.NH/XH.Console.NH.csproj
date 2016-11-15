@@ -70,10 +70,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Domain\XH.Domain.Models\XH.Domain.Models.csproj">
-      <Project>{b49febf9-2949-42bb-b925-2d37a732dc64}</Project>
-      <Name>XH.Domain.Models</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Global\XH.Config\XH.Config.csproj">
       <Project>{50e442fe-fad3-4b30-9590-749db8159f66}</Project>
       <Name>XH.Config</Name>
@@ -81,10 +77,6 @@
     <ProjectReference Include="..\..\Global\XH.Shared\XH.Shared.csproj">
       <Project>{452ebb02-3be0-4d74-98a2-2af82a80ed16}</Project>
       <Name>XH.Shared</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Infrastructure\XH.Infrastructure.Domain\XH.Infrastructure.Domain.csproj">
-      <Project>{bf5c7752-4b22-4f5b-8a76-3baa5f216a45}</Project>
-      <Name>XH.Infrastructure.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Infrastructure\XH.Infrastructure\XH.Infrastructure.csproj">
       <Project>{3008a7d0-c5ac-4e09-a05c-34785c1a1c67}</Project>

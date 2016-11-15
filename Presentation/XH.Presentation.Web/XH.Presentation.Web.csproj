@@ -149,12 +149,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KnockoutController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\popbox.css" />
     <Content Include="Assets\plugins\angularjs\angular-animate.js" />
     <Content Include="Assets\plugins\angularjs\angular-animate.min.js" />
     <Content Include="Assets\plugins\angularjs\angular-aria.js" />
@@ -928,17 +930,30 @@
     <Content Include="Assets\plugins\angularjs\i18n\angular-locale_zu.js" />
     <Content Include="Assets\plugins\angularjs\plugins\angular-ui-router.js" />
     <Content Include="Assets\plugins\angularjs\plugins\angular-ui-router.min.js" />
+    <Content Include="Assets\plugins\angularjs\plugins\ui-bootstrap-tpls-0.14.3.js" />
+    <Content Include="Assets\plugins\angularjs\plugins\ui-bootstrap-tpls-2.2.0.min.js" />
     <Content Include="Assets\plugins\angularjs\version.txt" />
+    <Content Include="Assets\plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="Assets\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="Assets\plugins\bootstrap\js\bootstrap.min.js" />
     <Content Include="Assets\plugins\jquery.min.js" />
+    <Content Include="Assets\plugins\knockout\knockout-3.4.0.js" />
+    <Content Include="Assets\plugins\linq.min.js" />
+    <Content Include="Assets\scripts\knockout\index.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\app\modules\app.js" />
+    <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\modules\home\controllers\homeController.js" />
-    <Content Include="Scripts\app\modules\router.js" />
+    <Content Include="Scripts\app\modules\shared\directives\multilingualField.js" />
+    <Content Include="Scripts\app\router.js" />
+    <Content Include="Scripts\extensions\FunctionExtension.js" />
     <Content Include="Scripts\extensions\StringExtension.js" />
+    <Content Include="Scripts\jstest.js" />
     <Content Include="Scripts\utility.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Templates\Home\index.tpl.html" />
@@ -953,14 +968,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\css\" />
     <Folder Include="Assets\fonts\" />
     <Folder Include="Assets\images\" />
     <Folder Include="Assets\plugins\angularjs\i18n\ngLocale\" />
+    <Folder Include="Assets\plugins\gallery\" />
     <Folder Include="Assets\plugins\jasmine\" />
-    <Folder Include="Assets\scripts\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\app\modules\shared\directives\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -992,6 +1005,26 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\JsTest.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Touch.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Gallery.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Knockout\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout_Knockout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Knockout\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -7,7 +7,7 @@
         $scope.date = new Date();
     }, 100);
 
-    var str = "time:{{time}},age:{{age}},name:{{name}},street:{{address.street}},contactPersonName:{{address.contactPerson}}".formatWith({
+    var str = "time:{{time}},age:{{age}},name:{{name}},street:{{address.street}},contactPersonName:{{address.contactPerson.name}}".formatWith({
         time: new Date(),
         age: 18,
         name: "huang",

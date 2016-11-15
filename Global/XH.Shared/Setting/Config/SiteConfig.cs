@@ -24,6 +24,5 @@ namespace XH.Shared.Setting
                 return googleApiKey;
             }
         }
-
     }
 }
