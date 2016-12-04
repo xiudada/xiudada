@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Xiudada | Dashboard";
+}
+<div ng-show="!resetPassword">
+    <div ng-show="!hasLogin" class="" data-ng-include="'/Templates/layout/login.tpl.html'"></div>
+    <div ng-show="hasLogin" data-ng-include="'/Templates/layout/layout.tpl.html'"></div>
+</div>
+<div ng-if="resetPassword">
+    <ui-view></ui-view>
+</div>

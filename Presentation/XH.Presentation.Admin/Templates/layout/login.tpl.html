@@ -1,0 +1,78 @@
+﻿<div class="logo">
+    <a href="/">
+        <img src="/assets/pages/img/logo-big.png" alt="" />
+    </a>
+</div>
+<div class="content" ng-controller="LoginController">
+    <form class="login-form" name="loginForm" action="#" novalidate ng-hide="showForgotForm">
+        <h3 class="form-title">{{'LOGIN.TITLE'|translate}}</h3>
+        <div class="alert alert-danger" ng-show="(loginForm.password.$error.required || loginForm.username.$error.required) && loginModel.submited">
+            <button class="close" data-close="alert"></button>
+            <span>{{'LOGIN.SHOW_ERROR'|translate}}</span>
+        </div>
+        <div class="alert alert-danger" ng-show="loginModel.showError">
+            <button class="close" data-close="alert"></button>
+            <span> {{loginModel.loginMessage}} </span>
+        </div>
+        <div class="form-group" ng-class="{'has-error':loginForm.username.$error.required && loginModel.submited}">
+            <label class="control-label visible-ie8 visible-ie9">{{'LOGIN.USERNAME_LABEL'|translate}}</label>
+            <div class="input-icon">
+                <i class="fa fa-user"></i>
+                <input ng-model="loginModel.Email" required class="form-control placeholder-no-fix" type="email" autocomplete="off" placeholder="{{'LOGIN.USERNAME_LABEL'|translate}}" name="username" />
+            </div>
+            <span ng-show="loginForm.username.$error.required && loginModel.submited" class="help-block help-block-error">{{'LOGIN.FIELD_REQUIRED'|translate}}</span>
+        </div>
+        <div class="form-group" ng-class="{'has-error':loginForm.password.$error.required && loginModel.submited}">
+            <label class="control-label visible-ie8 visible-ie9">{{'LOGIN.PASSWORD_LABEL'|translate}}</label>
+            <div class="input-icon">
+                <i class="fa fa-lock"></i>
+                <input ng-model="loginModel.Password" required class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="{{'LOGIN.PASSWORD_LABEL'|translate}}" name="password" />
+            </div>
+            <span ng-show="loginForm.password.$error.required && loginModel.submited" class="help-block help-block-error">{{'LOGIN.FIELD_REQUIRED'|translate}}</span>
+        </div>
+        <div class="form-group form-actions">
+            <div class="row">
+                <div class="col-md-8">
+                    <input type="checkbox" ng-model="loginModel.IsPersistent" name="IsPersistent" /> {{'LOGIN.KEEP_LOGIN_IN_LABEL'|translate}}<br />
+                    <input type="checkbox" ng-model="loginModel.IsRememberMe" name="IsRememberMe" /> {{'LOGIN.REMEMBER_ME_LABEL'|translate}}
+                </div>
+                <div class="col-md-4">
+                    <button type="button" ng-click="loginModel.loginClick()" ng-disabled="loginSubmitting" class="btn green pull-right"> {{'LOGIN.LOGIN_BUTTON'|translate}}</button>
+                </div>
+            </div>
+        </div>
+        <div class="forget-password">
+            <h4>{{'LOGIN.FORGOT_PASSWORD_LABEL'|translate}}</h4>
+            <p>
+                {{'LOGIN.RESET_PASSWORD_DESCRIPTION.START'|translate}}
+                <a href="javascript:;" ng-click="showForgotForm=true;forgetStyle={'display':'block'}"> {{'LOGIN.RESET_PASSWORD_DESCRIPTION.MID'|translate}} </a> {{'LOGIN.RESET_PASSWORD_DESCRIPTION.END'|translate}}
+            </p>
+        </div>
+    </form>
+    <form class="forget-form" name="forgotForm" ng-style="forgetStyle" ng-show="showForgotForm" novalidate>
+        <h3>{{'FORGOTPASSWORD.TITLE'|translate}}</h3>
+        <p> {{'FORGOTPASSWORD.DESCRIPTION'|translate}}</p>
+        <div class="alert alert-danger" ng-show="hasServerError">
+            <button class="close" data-close="alert"></button>
+            <span> {{serverError}} </span>
+        </div>
+        <div class="alert alert-success" ng-show="isSuccess">
+            <button class="close" data-close="alert"></button>
+            <span>{{'FORGOTPASSWORD.RESET_REQUEST'|translate}}</span>
+        </div>
+        <div class="form-group" ng-class="{'has-error':forgotForm.email.$invalid&&forgotSubmited}">
+            <div class="input-icon">
+                <i class="fa fa-envelope"></i>
+                <input class="form-control placeholder-no-fix" type="email" required ng-model="forgotModel.email" autocomplete="off" placeholder="{{'FORGOTPASSWORD.EMAIL_LABEL'|translate}}" name="email" />
+                <div ng-show="forgotForm.email.$invalid&&forgotSubmited">
+                    <span ng-show="forgotForm.email.$error.required" class="help-block help-block-error">{{'FORGOTPASSWORD.EMAIL_REQUIRED'|translate}}</span>
+                    <span ng-show="forgotForm.email.$error.email" class="help-block help-block-error">{{'FORGOTPASSWORD.EMAIL_INVALID'|translate}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="button" class="btn grey-salsa btn-outline" ng-click="showForgotForm=false;"> {{'FORGOTPASSWORD.BACK_BUTTON'|translate}}</button>
+            <button type="button" class="btn green pull-right" ng-click="submitForgot(forgotForm.$valid)"> {{'FORGOTPASSWORD.SUBMIT_BUTTON'|translate}}</button>
+        </div>
+    </form>
+</div>

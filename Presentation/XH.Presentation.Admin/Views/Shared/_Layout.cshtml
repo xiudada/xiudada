@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html ng-app="xiudada">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="@ViewBag.Description" name="description" />
+    <title>
+        @if (String.IsNullOrEmpty(ViewBag.EditTitle))
+        {
+            <text>@ViewBag.Title</text>
+        }
+        else
+        {
+            @ViewBag.EditTitle
+        }
+    </title>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=all" rel="stylesheet" type="text/css" class="">
+    <link rel="Shortcut Icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="Bookmark" href="favicon.ico" />
+    <base href="/" />
+    @RenderMainCss()
+</head>
+<body ng-controller="AppController"
+      class="page-header-fixed page-sidebar-closed-hide-logo page-on-load"
+      ng-class="{'login':!hasLogin,'page-content-white': settings.layout.pageContentWhite,'page-container-bg-solid': settings.layout.pageBodySolid, 'page-sidebar-closed': settings.layout.pageSidebarClosed}">
+    @RenderBody()
+    <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyDQ5olT52lw4neLidgjz9DBNjF-X-8bYng">
+    </script>
+    @RenderMainScripts()
+</body>
+</html>
+
+@helper RenderMainCss()
+{
+List<string> bundles = new List<string>
+    {
+        "~/service/css/main"
+    };
+
+foreach (string bundle in bundles)
+{
+        <text>
+            <link href="@BundleTable.Bundles.ResolveBundleUrl(bundle)" type="text/css" rel="stylesheet" />
+        </text>
+}
+}
+
+@helper RenderMainScripts()
+{
+bool needOptimize = false;
+    @RenderScriptItem("~/scripts/core", needOptimize)
+    @RenderScriptItem("~/scripts/jquery/plugins/special", false)
+    @RenderScriptItem("~/scripts/angularjs/core", needOptimize)
+    @RenderScriptItem("~/scripts/angularjs/realNextSharedDirective", needOptimize)
+    @RenderScriptItem("~/scripts/angularjs/app", needOptimize)
+}
+
+@helper RenderScriptItem(string bundlePath, bool needOptimize = true)
+{
+if (needOptimize)
+{
+        <text>
+            <script type="text/javascript" src="@BundleTable.Bundles.ResolveBundleUrl(bundlePath)"></script>
+        </text>
+}
+else
+{
+        @Scripts.Render(bundlePath)
+}
+}

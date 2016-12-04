@@ -1,0 +1,307 @@
+﻿<div class="page-bar ng-scope">
+    <!-- <div class="page-toolbar">
+        <div class="btn-group pull-right">
+            <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" dropdown-menu-hover="" data-delay="1000" data-close-others="true">
+                Actions
+                <i class="fa fa-angle-down"></i>
+            </button>
+            <ul class="dropdown-menu pull-right" role="menu">
+                <li>
+                    <a href="#">
+                        <i class="icon-user"></i> New User
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-present"></i> New Event
+                        <span class="badge badge-success">4</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-basket"></i> New order
+                    </a>
+                </li>
+                <li class="divider"> </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-flag"></i> Pending Orders
+                        <span class="badge badge-danger">4</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-users"></i> Pending Users
+                        <span class="badge badge-warning">12</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div> -->
+</div>
+<h3 class="page-title ng-scope"> Dashboard </h3>
+<!-- END PAGE HEADER-->
+<!-- BEGIN MAIN CONTENT -->
+<div ng-controller="DashboardController" class="ng-scope">
+    <section id="main-content" screenkey="Dashboard">
+        <div id="errorWrapper" class="row hide">
+            <div class="col-md-12">
+                <div class="alert alert-danger alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <label id="errorDescription">&nbsp;</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" ng-show="checkMenu('ViewRecentAddObjects')">
+                <!-- BEGIN BORDERED TABLE PORTLET-->
+                <div class="portlet light portlet-fit bordered">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-area-chart"></i>
+                            <span class="caption-subject font-red sbold uppercase">{{'DASHBOARD.RECENT_ADD_OBJECTS'|translate}}</span>
+                        </div>
+                        <div class="actions">
+                            <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                <a class="btn btn-info text-uppercase" href="#/offer/overview/all?page=1&pageSize=30">{{'DASHBOARD.SHOW_ALL_OBJECTS'|translate}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="table-scrollable table-scrollable-borderless">
+                            <table class="table table-hover table-light">
+                                <thead>
+                                    <tr class="uppercase">
+                                        <th> # </th>
+                                        <th> {{'DASHBOARD.BUILDING_NAME'|translate}} </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in recentRealEstateObjects">
+
+                                        <td>{{$index + 1}}</td>
+                                        <td><a href="#/offer/detail/{{item.VersionId}}">{{item.BuildingName==undefined?item.Location.Street+" - "+item.Location.HouseNumber+" - "+item.Location.City:item.BuildingName}}</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- END BORDERED TABLE PORTLET-->
+            </div>
+            <div class="col-md-6" ng-show="checkMenu('ViewRecentTransactions')">
+                <!-- BEGIN BORDERED TABLE PORTLET-->
+                <div class="portlet light portlet-fit bordered">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-area-chart"></i>
+                            <span class="caption-subject font-red sbold uppercase">{{'DASHBOARD.RECENT_TRANSACTIONS'|translate}}</span>
+                        </div>
+                        <div class="actions">
+                            <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                <a class="btn btn-info text-uppercase" href="#/transaction/overview/all?page=1&pageSize=30">{{'DASHBOARD.SHOW_ALL_TRANSACTIONS'|translate}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="table-scrollable table-scrollable-borderless">
+                            <table class="table table-hover table-light">
+                                <thead>
+                                    <tr class="uppercase">
+                                        <th> # </th>
+                                        <th> {{'DASHBOARD.BUILDING_NAME'|translate}} </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in recentTransactions">
+                                        <td>{{$index + 1}}</td>
+                                        <td><a href="#/transaction/detail/{{item.Id}}">{{item.BuildingName==undefined?item.Location.Street+" - "+item.Location.HouseNumber+" - "+item.Location.City:item.BuildingName}}</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- END BORDERED TABLE PORTLET-->
+            </div>
+            <div class="col-md-4">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6" ng-show="checkMenu('ViewNumberOfItems')">
+                <!-- BEGIN BORDERED TABLE PORTLET-->
+                <div class="portlet light portlet-fit bordered">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-area-chart"></i>
+                            <span class="caption-subject font-red sbold uppercase">{{'DASHBOARD.NUMBER_OF_ITEMS'|translate}}</span>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="table-scrollable table-scrollable-borderless">
+                            <table class="table table-hover table-light">
+                                <thead>
+                                    <tr class="uppercase">
+                                        <th> {{'DASHBOARD.OFFER_USAGE'|translate}}</th>
+                                        <th> {{'DASHBOARD.OBJECT_NUMBER'|translate}}</th>
+                                        <th style="text-align:right"> {{'DASHBOARD.METRAGE'|translate}} </th>
+                                        <th>&nbsp;</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{'DASHBOARD.UNKNOWN'|translate}}</td>
+                                        <td>{{numberOfItems.OfferUsageItemsDto.UnknownOfferUsage.ObjectNumbers}}</td>
+                                        <td style="text-align:right">{{numberOfItems.OfferUsageItemsDto.UnknownOfferUsage.SquareMeters}}  </td>
+                                        <td> m<sup>2</sup></td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{'DASHBOARD.OFFICE'|translate}}</td>
+                                        <td>{{numberOfItems.OfferUsageItemsDto.OfficeOfferUsage.ObjectNumbers}}</td>
+                                        <td style="text-align:right">{{numberOfItems.OfferUsageItemsDto.OfficeOfferUsage.SquareMeters}}  </td>
+                                        <td> m<sup>2</sup></td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{'DASHBOARD.INDUSTRIAL'|translate}}</td>
+                                        <td>{{numberOfItems.OfferUsageItemsDto.IndustrialOfferUsage.ObjectNumbers}}</td>
+                                        <td style="text-align:right">{{numberOfItems.OfferUsageItemsDto.IndustrialOfferUsage.SquareMeters}}  </td>
+                                        <td> m<sup>2</sup></td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{'DASHBOARD.RETAIL'|translate}}</td>
+                                        <td>{{numberOfItems.OfferUsageItemsDto.RetailOfferUsage.ObjectNumbers}}</td>
+                                        <td style="text-align:right">{{numberOfItems.OfferUsageItemsDto.RetailOfferUsage.SquareMeters}}  </td>
+                                        <td> m<sup>2</sup></td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{'DASHBOARD.RENOVATION'|translate}}</td>
+                                        <td>{{numberOfItems.OfferUsageItemsDto.RenovationOfferUsage.ObjectNumbers}}</td>
+                                        <td style="text-align:right">{{numberOfItems.OfferUsageItemsDto.RenovationOfferUsage.SquareMeters}}  </td>
+                                        <td> m<sup>2</sup></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>{{'DASHBOARD.HOTEL_AND_CATERING_INDUSTRY'|translate}}</td>
+                                        <td>{{numberOfItems.OfferUsageItemsDto.HotelAndCateringIndustryOfferUsage.ObjectNumbers}}</td>
+                                        <td style="text-align:right">{{numberOfItems.OfferUsageItemsDto.HotelAndCateringIndustryOfferUsage.SquareMeters}}  </td>
+                                        <td> m<sup>2</sup></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>{{'DASHBOARD.LEISURE'|translate}}</td>
+                                        <td>{{numberOfItems.OfferUsageItemsDto.LeisureOfferUsage.ObjectNumbers}}</td>
+                                        <td style="text-align:right">{{numberOfItems.OfferUsageItemsDto.LeisureOfferUsage.SquareMeters}}  </td>
+                                        <td> m<sup>2</sup></td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{'DASHBOARD.LAND'|translate}}</td>
+                                        <td>{{numberOfItems.OfferUsageItemsDto.LandOfferUsage.ObjectNumbers}}</td>
+                                        <td style="text-align:right">{{numberOfItems.OfferUsageItemsDto.LandOfferUsage.SquareMeters}} </td>
+                                        <td> m<sup>2</sup></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>{{'DASHBOARD.TOTAL'|translate}}</td>
+                                        <td>{{numberOfItems.NumberOfObjects}}</td>
+                                        <td style="text-align:right">{{numberOfItems.NumberOfSquareMeters}} </td>
+                                        <td> m<sup>2</sup></td>
+                                    </tr>
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                                    <tr>
+                                        <td>{{'DASHBOARD.NUMBER_OF_LINKED_OFFERS'|translate}}</td>
+                                        <td><a href="#/offer/overview">{{numberOfItems.NumberOfLinkedOffers}}</a></td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{'DASHBOARD.NUMBER_OF_TRANSACTIONS'|translate}}</td>
+                                        <td><a href="#/transaction/overview">{{numberOfItems.NumberOfOwnTransactions}}</a></td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{'DASHBOARD.NUMBER_OF_TRANSACTIONS_CURRENT_YEAR'|translate}}</td>
+                                        <td><a href="#/transaction/overview">{{numberOfItems.NumberOfCurrentYearOwnTransaction}}</a></td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- END BORDERED TABLE PORTLET-->
+            </div>
+            <div class="col-md-6">
+                <!-- BEGIN BORDERED TABLE PORTLET-->
+                <!-- <div class="portlet light portlet-fit bordered">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="icon-settings font-red"></i>
+                            <span class="caption-subject font-red sbold uppercase">Recent Add Objects</span>
+                        </div>
+                        <div class="actions">
+                            <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                <a class="btn btn-info text-uppercase" href="#/offer/overview">Show all objects</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="table-scrollable table-scrollable-borderless">
+                            <table class="table table-hover table-light">
+                                <thead>
+                                    <tr class="uppercase">
+                                        <th> # </th>
+                                        <th> Building Name </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- END BORDERED TABLE PORTLET-->
+            </div>
+        </div>
+
+        <!-- <div class="row">
+            <div class="col-md-12" id="wrapper-last-added-objects">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span fieldkey="5 Laatste toegevoegde objecten">5 Laatste toegevoegde objecten</span></h3>
+                    </div>
+                    <div class="panel-body">
+
+
+                        <table id="table-last-added-objects" class="table footable-loaded footable" data-page-size="5" data-page-previous-text="prev" data-page-next-text="next">
+                            <thead>
+                                <tr>
+                                    <th data-sort-ignore="true" data-toggle="true">&nbsp;</th>
+                                    <th data-sort-ignore="true" data-hide="phone,tablet">&nbsp;</th>
+                                    <th data-hide="phone,tablet" class="footable-sortable"><span fieldkey="Gebouwsoort">Gebouwsoort</span><span class="footable-sort-indicator"></span></th>
+                                    <th class="footable-sortable"><span fieldkey="Naam gebouw">Naam gebouw</span><span class="footable-sort-indicator"></span></th>
+                                    <th class="footable-sortable"><span fieldkey="Adres">Adres</span><span class="footable-sort-indicator"></span></th>
+                                    <th data-hide="phone,tablet" class="footable-sortable"><span fieldkey="Postcode">Postcode</span><span class="footable-sort-indicator"></span></th>
+                                    <th class="footable-sortable"><span fieldkey="Plaats">Plaats</span><span class="footable-sort-indicator"></span></th>
+                                    <th data-hide="phone,tablet" class="footable-sortable"><span fieldkey="Listing type">Listing type</span><span class="footable-sort-indicator"></span></th>
+                                    <th data-sort-ignore="true">&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody><tr><td>&nbsp;</td><td>&nbsp;</td><td></td><td></td><td>Jules Verneweg 94 </td><td>5015 BM</td><td>Tilburg</td><td></td><td class="hide"></td><td><a href="#"><i class="fa fa-chevron-right"></i></a></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td></td><td></td><td>Jules Verneweg 94 </td><td>5015 BM</td><td>Tilburg</td><td></td><td class="hide"></td><td><a href="#"><i class="fa fa-chevron-right"></i></a></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td></td><td></td><td>Jules Verneweg 94 </td><td>5015 BM</td><td>Tilburg</td><td></td><td class="hide"></td><td><a href="#"><i class="fa fa-chevron-right"></i></a></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td></td><td></td><td>Jules Verneweg 94 </td><td>5015 BM</td><td>Tilburg</td><td></td><td class="hide"></td><td><a href="#"><i class="fa fa-chevron-right"></i></a></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td></td><td></td><td>Jules Verneweg 94 </td><td>5015 BM</td><td>Tilburg</td><td></td><td class="hide"></td><td><a href="#"><i class="fa fa-chevron-right"></i></a></td></tr></tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </section>
+</div>
+<!-- END MAIN CONTENT -->
+<!-- BEGIN MAIN JS & CSS -->
+<script class="ng-scope">
+    //Dashboard.init();
+</script>
+<!-- BEGIN MAIN JS & CSS

@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XH.Domain", "XH.Domain\XH.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XH.Domain.Dto", "XH.Domain.Dto\XH.Domain.Dto.csproj", "{4487F4D6-A065-4C14-AFCD-9FE4174412F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XH.Presentation.Admin", "Presentation\XH.Presentation.Admin\XH.Presentation.Admin.csproj", "{C77A43B0-D5AB-4373-A3B3-EB9EB75F21FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +115,14 @@ Global
 		{4487F4D6-A065-4C14-AFCD-9FE4174412F5}.Production|Any CPU.Build.0 = Release|Any CPU
 		{4487F4D6-A065-4C14-AFCD-9FE4174412F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4487F4D6-A065-4C14-AFCD-9FE4174412F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C77A43B0-D5AB-4373-A3B3-EB9EB75F21FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C77A43B0-D5AB-4373-A3B3-EB9EB75F21FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C77A43B0-D5AB-4373-A3B3-EB9EB75F21FA}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{C77A43B0-D5AB-4373-A3B3-EB9EB75F21FA}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{C77A43B0-D5AB-4373-A3B3-EB9EB75F21FA}.Production|Any CPU.ActiveCfg = Release|Any CPU
+		{C77A43B0-D5AB-4373-A3B3-EB9EB75F21FA}.Production|Any CPU.Build.0 = Release|Any CPU
+		{C77A43B0-D5AB-4373-A3B3-EB9EB75F21FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C77A43B0-D5AB-4373-A3B3-EB9EB75F21FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -127,5 +137,6 @@ Global
 		{64BC54F5-A0A7-4DB8-99FC-AB653CDB20CE} = {380F98B0-BCA2-4204-BDA6-05F831F828CE}
 		{3620CAD3-5AB2-40F3-B6E2-A153CE1BD5F5} = {858E1AEC-5C1C-440C-A442-EF2140693850}
 		{4487F4D6-A065-4C14-AFCD-9FE4174412F5} = {858E1AEC-5C1C-440C-A442-EF2140693850}
+		{C77A43B0-D5AB-4373-A3B3-EB9EB75F21FA} = {A856F174-C960-49C1-8438-05FB7C74F955}
 	EndGlobalSection
 EndGlobal
