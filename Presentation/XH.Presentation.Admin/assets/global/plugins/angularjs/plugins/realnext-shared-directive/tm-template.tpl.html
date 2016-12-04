@@ -1,0 +1,29 @@
+﻿<div class="row">
+    <div class="col-md-8 col-sm-12">
+        <div class="dataTables_paginate paging_bootstrap_extended">
+            <div class="pagination-panel">
+                {{'TM_PAGINATION.PAGE'|translate}}
+                <a href="#"  ng-click="prevPage()" ng-disabled="conf.currentPage == 1" class="btn btn-sm default prev">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                <input type="text" ng-model="conf.currentPage" class="pagination-panel-input form-control input-sm input-inline input-mini" maxlenght="5" style="text-align:center; margin: 0 5px;">
+                    <a href="#" ng-click="nextPage()" ng-disabled="conf.currentPage == conf.numberOfPages" class="btn btn-sm default next">
+                        <i class="fa fa-angle-right"></i>
+                    </a> 
+                {{'TM_PAGINATION.OF'|translate}} <span class="pagination-panel-total">{{conf.numberOfPages}}</span>
+            </div>
+        </div>
+        <div class="dataTables_length">
+            <label>
+                <span class="seperator">|</span>
+                {{'TM_PAGINATION.VIEW'|translate}}
+                <select ng-model="conf.itemsPerPage" ng-options="(option) for option in conf.perPageOptions" ng-change="changeItemsPerPage()" class="form-control input-xs input-sm input-inline"></select>
+                {{'TM_PAGINATION.RECORDS'|translate}}
+            </label>
+        </div>
+        <div class="dataTables_info">
+            <span class="seperator">|</span>{{'TM_PAGINATION.FOUND_TOTAL'|translate}} {{ conf.totalItems }} {{'TM_PAGINATION.RECORDS'|translate}}
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12"></div>
+</div>
