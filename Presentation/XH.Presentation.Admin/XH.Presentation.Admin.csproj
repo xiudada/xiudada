@@ -2141,12 +2141,6 @@
     <Content Include="assets\global\plugins\angularjs\angular.min.js" />
     <Content Include="assets\global\plugins\angularjs\plugins\angular-file-upload\angular-file-upload.min.js" />
     <Content Include="assets\global\plugins\angularjs\plugins\angular-file-upload\upload.php" />
-    <Content Include="assets\global\plugins\angularjs\plugins\angular-resource.js" />
-    <Content Include="assets\global\plugins\angularjs\plugins\angular-resource.min.js" />
-    <Content Include="assets\global\plugins\angularjs\plugins\angular-translate-loader-static-files.js" />
-    <Content Include="assets\global\plugins\angularjs\plugins\angular-translate-loader-static-files.min.js" />
-    <Content Include="assets\global\plugins\angularjs\plugins\angular-translate.js" />
-    <Content Include="assets\global\plugins\angularjs\plugins\angular-translate.min.js" />
     <Content Include="assets\global\plugins\angularjs\plugins\angular-ui-router.min.js" />
     <Content Include="assets\global\plugins\angularjs\plugins\ocLazyLoad.min.js" />
     <Content Include="assets\global\plugins\angularjs\plugins\ui-bootstrap-tpls.min.js" />
@@ -5757,42 +5751,19 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Scripts\app\app.js" />
-    <Content Include="Scripts\app\appController.js" />
-    <Content Include="Scripts\app\constant.js" />
-    <Content Include="Scripts\app\directives.js" />
-    <Content Include="Scripts\app\filters.js" />
-    <Content Include="Scripts\app\globalConfig.js" />
-    <Content Include="Scripts\app\layoutController.js" />
-    <Content Include="Scripts\app\modules\home\controllers\homeController.js" />
-    <Content Include="Scripts\app\modules\shared\constrant\permissionNameConstant.js" />
-    <Content Include="Scripts\app\modules\shared\controllers\errorPageController.js" />
-    <Content Include="Scripts\app\modules\shared\controllers\noPermissionController.js" />
-    <Content Include="Scripts\app\modules\shared\directives\compareToDirecitve.js" />
-    <Content Include="Scripts\app\modules\shared\directives\multilingualField.js" />
-    <Content Include="Scripts\app\modules\shared\directives\rnBooleanLabelDirective.js" />
-    <Content Include="Scripts\app\modules\shared\directives\rnListShowStatusDirective.js" />
-    <Content Include="Scripts\app\modules\shared\directives\rnMaxLength.js" />
-    <Content Include="Scripts\app\modules\shared\directives\rnSelectDirective.js" />
-    <Content Include="Scripts\app\modules\shared\factories\dropDownListDataService.js" />
-    <Content Include="Scripts\app\modules\shared\factories\googleMapFactory.js" />
-    <Content Include="Scripts\app\modules\shared\factories\ImageService.js" />
-    <Content Include="Scripts\app\modules\shared\factories\limitSearchEngine.js" />
-    <Content Include="Scripts\app\modules\shared\factories\notificationService.js" />
-    <Content Include="Scripts\app\modules\shared\factories\showErrorService.js" />
-    <Content Include="Scripts\app\modules\shared\factories\userDataService.js" />
-    <Content Include="Scripts\app\modules\shared\filters\formatFilters.js" />
-    <Content Include="Scripts\app\modules\shared\sharedModule.js" />
+    <Content Include="Scripts\app\controllers\appController.js" />
+    <Content Include="Scripts\app\controllers\dashboardController.js" />
+    <Content Include="Scripts\app\controllers\layoutController.js" />
+    <Content Include="Scripts\app\directives\directives.js" />
     <Content Include="Scripts\app\router.js" />
     <Content Include="Scripts\app\utility.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Templates\home\dashboard.tpl.html" />
-    <Content Include="Templates\layout\footer.tpl.html" />
-    <Content Include="Templates\layout\header.tpl.html" />
-    <Content Include="Templates\layout\layout.tpl.html" />
-    <Content Include="Templates\layout\login.tpl.html" />
-    <Content Include="Templates\layout\nopermission.tpl.html" />
-    <Content Include="Templates\layout\pageheader.tpl.html" />
-    <Content Include="Templates\layout\sidebar.tpl.html" />
+    <Content Include="Templates\layout\footer.html" />
+    <Content Include="Templates\layout\header.html" />
+    <Content Include="Templates\layout\quick-sidebar.html" />
+    <Content Include="Templates\layout\sidebar.html" />
+    <Content Include="Templates\layout\theme-panel.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -5808,22 +5779,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="assets\apps\img\" />
-    <Folder Include="assets\global\plugins\angularjs\plugins\angular-blockui-ui\" />
-    <Folder Include="assets\global\plugins\angularjs\plugins\angular-bootstrap-switch\" />
-    <Folder Include="assets\global\plugins\angularjs\plugins\angular-datepicker\" />
     <Folder Include="assets\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
-    <Folder Include="assets\global\plugins\angularjs\plugins\angular-moment\" />
-    <Folder Include="assets\global\plugins\angularjs\plugins\angular-multi-select-tree\" />
-    <Folder Include="assets\global\plugins\angularjs\plugins\angular-ui-tree\" />
-    <Folder Include="assets\global\plugins\angularjs\plugins\ngJsTree\" />
-    <Folder Include="assets\global\plugins\angularjs\plugins\ngMask\" />
-    <Folder Include="assets\global\plugins\angularjs\plugins\ngRemoteValidate\" />
-    <Folder Include="assets\global\plugins\angularjs\plugins\ngSweetAlert\" />
-    <Folder Include="assets\global\plugins\angularjs\plugins\realnext-shared-directive\" />
-    <Folder Include="assets\global\plugins\angularjs\plugins\textAngular-1.4.6\" />
-    <Folder Include="assets\global\plugins\angularjs\plugins\ui-tinymce\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\app\modules\shared\resources\" />
+    <Folder Include="Scripts\app\services\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

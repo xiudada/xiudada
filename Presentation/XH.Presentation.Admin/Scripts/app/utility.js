@@ -13,7 +13,7 @@ String.prototype.mapPath = function () {
     if (/^\s*(~?\/)?assets.+?$/.test(url)) {
         return url;
     }
-    return "/areas/service{0}".formatWith(this);
+    return "{0}".formatWith(this);
 }
 
 Array.prototype.remove = function (from, to) {

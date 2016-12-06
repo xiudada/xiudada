@@ -9,7 +9,7 @@ namespace XH.Infrastructure.Domain.Models
     /// <summary>
     /// Full auditable entity
     /// </summary>
-    public interface IFullAuditableEntity : IAuditableEntity, ISoftDeletableEntity
+    public interface IFullAuditableEntity : IAuditable, ISoftDeletableEntity
     {
     }
 }

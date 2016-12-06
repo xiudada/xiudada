@@ -85,6 +85,9 @@
     <Compile Include="Dependency\ContainerManager.cs" />
     <Compile Include="Dependency\IContainerManager.cs" />
     <Compile Include="Dependency\IDependencyRegistrar.cs" />
+    <Compile Include="Domain\Models\IEntityOfTPrimaryKey.cs" />
+    <Compile Include="Domain\Repositories\IRepository.cs" />
+    <Compile Include="Domain\Repositories\IRepositoryOfTEntityAndTPrimaryKey.cs" />
     <Compile Include="Engine\EngineContext.cs" />
     <Compile Include="Engine\IEngine.cs" />
     <Compile Include="Engine\XHEngine.cs" />
@@ -106,10 +109,10 @@
     <Compile Include="Bus\ICommandBus.cs" />
     <Compile Include="Command\ICommandHandler.cs" />
     <Compile Include="Command\ICommandResult.cs" />
-    <Compile Include="Domain\Models\AudiableEntityBase.cs" />
+    <Compile Include="Domain\Models\AuditableEntity.cs" />
     <Compile Include="Domain\Models\EntityBase.cs" />
     <Compile Include="Domain\Models\FullAuditableEntityBase.cs" />
-    <Compile Include="Domain\Models\IAuditableEntity.cs" />
+    <Compile Include="Domain\Models\IAuditable.cs" />
     <Compile Include="Domain\Models\IEntity.cs" />
     <Compile Include="Domain\Models\IFullAuditableEntity.cs" />
     <Compile Include="Domain\Models\ISoftDeletableEntity.cs" />
@@ -125,6 +128,7 @@
     <Compile Include="Reflection\WebAppTypeFinder.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Domain\UnitOfWorks\" />
     <Folder Include="Utility\" />
   </ItemGroup>
   <ItemGroup>
