@@ -9,17 +9,12 @@ namespace XH.Infrastructure.Domain.Models
     /// <summary>
     /// Base entity
     /// </summary>
-    public abstract class EntityBase<TPrimaryKey>
+    public abstract class EntityBase<TPrimaryKey> : IEntity<TPrimaryKey>
     {
         /// <summary>
         /// Id
         /// </summary>
-        public virtual TPrimaryKey Id { get; protected set; }
-
-        /// <summary>
-        /// Version handling versioning and concurrency
-        /// </summary>
-        public virtual int Version { get; set; }
+        public virtual TPrimaryKey Id { get; set; }
 
         /// <summary>
         /// Equals
@@ -93,6 +88,11 @@ namespace XH.Infrastructure.Domain.Models
             return GetType();
         }
 
+        public bool IsTransient()
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Equals
         /// </summary>
@@ -119,12 +119,12 @@ namespace XH.Infrastructure.Domain.Models
     /// <summary>
     /// Base entity
     /// </summary>
-    public abstract class EntityBase : EntityBase<string>
+    public abstract class EntityBase : EntityBase<string>, IEntity<string>
     {
         /// <summary>
         /// Constuctor
         /// </summary>
-        protected EntityBase()
+        public EntityBase()
         {
             Id = Guid.NewGuid().ToString();
         }

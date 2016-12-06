@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace XH.Infrastructure.Domain.Models
 {
     /// <summary>
-    /// Entity interface
+    /// When user string(GUID) as primary key
     /// </summary>
-    public interface IEntity
+    public interface IEntity : IEntity<string>
     {
     }
 }
