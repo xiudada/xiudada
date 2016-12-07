@@ -4,6 +4,7 @@
     body{
         padding:0;
     }
+    .list-category{margin-left: 0;}
 }
 
 @media (max-width: 1199px) and (min-width: 992px){

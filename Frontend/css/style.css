@@ -23,6 +23,7 @@ i{
 	font-style: normal;
 }
 
+
 .text-red{
     color: #f54858;
 }
@@ -184,16 +185,16 @@ i{
 	
 }
 
-.col-list .art-push{
-	color: #8899a6
+.art-push{
+	color:#ff6666
 }
 
 .art-push:hover, .art-push:focus, .art-push:active{
 	text-decoration: none;
-	color: #485a67;
+	color:#FF0000 ;
 }
 
-.col-list .art-push i{
+.art-push i{
 	margin-right: 5px;
 }
 
@@ -244,7 +245,21 @@ i{
 
 .sidebar-title .nav-tabs a{
 	color: #caced1 ;
-	font-size: 15px;
+	font-size: 14px;
+	font-weight: 700;
+	
+}
+
+.sidebar-title h5{
+	display: block;
+	padding: 0 10px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	border-bottom: 1px solid #e8e8e8;
+	margin-top: 0;
+	font-weight: 700;
+	color: #777;
 }
 
 .sidebar-title .current a, .sidebar-title .current a:hover, .sidebar-title .current a:active, .sidebar-title .current a:focus{
@@ -252,7 +267,136 @@ i{
 	background: #eaeaea;
 	cursor: default;
 	border-bottom: 1px solid #eaeaea;
+	color: #777;
 }
+
+
+
+/*hot-target*/
+.hot-tag{
+	display: block;
+	margin: 10px 0;
+}
+.hot-tag a{ 
+	display: inline-block;
+	margin:  8px 10px ;
+}
+
+
+/*list-category*/
+.list-category{
+	margin-left: -15px;
+}
+
+
+
+/*breadcrumb*/
+.breadcrumb{
+	margin-left: -15px;
+	background: #fff;
+}
+.breadcrumb>li+li:before{
+	content:"-";
+	margin: 0 5px;
+}
+
+
+
+/*art-content-box*/
+.art-content-box{
+	border-top: 1px solid #e8e8e8;
+
+}
+.art-content-box .pub-time{
+    font-size: 14px;
+
+}
+.art-title{
+	margin-bottom: 2%;
+	margin-top: 5%;
+}
+
+.pub-from{ 
+	margin-left: 10px;
+	color: #a9a9a9;
+}
+
+.pub-from a{
+	color: #a9a9a9;
+}
+
+.art-content{
+	display: block;
+	margin-top: 5%;
+	line-height: 1.8em;
+	font-size: 15px;
+}
+.art-content img{ 
+	display: block;
+	width: 100%;
+}
+.art-content-footer{
+	display: block;
+	height: 40px; 
+	line-height: 40px; 
+	margin-top: 5%;
+
+}
+.art-from{
+	color: #999;
+}
+.art-from a{
+	color: #8899a6;
+	text-decoration:underline;
+	margin-left: 5px;
+
+}
+.art-content-box .ar  .t-push{
+	font-size: 20px;
+}
+
+
+/*comment*/
+.comments, .comment-list{ 
+	display: block;
+
+}
+.comment-list{
+	margin-top: 20px;
+}
+.comment-list-clip dl{
+	display: block;
+	border-bottom:1px dashed #e8e8e8;
+	padding: 20px ;
+	margin-bottom: 0;
+}
+.comment-list-clip dl:after{
+    content:"."; 
+    display:block; 
+    height:0; 
+    visibility:hidden; 
+    clear:both; 
+}
+.comment-list-clip dt{
+    width: 18%;
+}
+.comment-list-clip dt>*{
+	display: block;
+}
+.comment-list-clip small{
+	color: #ccc;
+	font-weight: normal;
+}
+.comment-list-clip dd{
+	width: 80%;
+}
+
+
+
+
+
+
+
 
 /*footer*/
 
