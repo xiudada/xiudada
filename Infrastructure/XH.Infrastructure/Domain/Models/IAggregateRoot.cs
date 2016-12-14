@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace XH.Domain.Mapping
+namespace XH.Infrastructure.Domain.Models
 {
-    public class Class1
+    public interface IAggregateRoot
     {
+        string Id { get; set; }
     }
 }

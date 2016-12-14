@@ -86,6 +86,8 @@
     <Compile Include="Dependency\IContainerManager.cs" />
     <Compile Include="Dependency\IDependencyRegistrar.cs" />
     <Compile Include="Dependency\IDependencyResolver.cs" />
+    <Compile Include="Domain\Models\FullAuditableEntity.cs" />
+    <Compile Include="Domain\Models\IAggregateRoot.cs" />
     <Compile Include="Domain\Models\IEntityOfTPrimaryKey.cs" />
     <Compile Include="Domain\Repositories\IRepository.cs" />
     <Compile Include="Domain\Repositories\IRepositoryOfTEntity.cs" />
@@ -116,7 +118,6 @@
     <Compile Include="Command\ICommandResult.cs" />
     <Compile Include="Domain\Models\AuditableEntity.cs" />
     <Compile Include="Domain\Models\EntityBase.cs" />
-    <Compile Include="Domain\Models\FullAuditableEntityBase.cs" />
     <Compile Include="Domain\Models\IAuditable.cs" />
     <Compile Include="Domain\Models\IEntity.cs" />
     <Compile Include="Domain\Models\IFullAuditableEntity.cs" />

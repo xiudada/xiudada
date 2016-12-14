@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{23703FE3-843E-4D4F-98E7-3A07723C73BA}</ProjectGuid>
+    <ProjectGuid>{86A9E837-7348-4F16-9E6C-5B2BFEF6011F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XH.Domain.Model</RootNamespace>
-    <AssemblyName>XH.Domain.Model</AssemblyName>
+    <RootNamespace>XH.Domain</RootNamespace>
+    <AssemblyName>XH.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,11 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Catalogs\Models\Article.cs" />
+    <Compile Include="Catalogs\Models\Category.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seo\Models\SEOMetaData.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Infrastructure\XH.Infrastructure\XH.Infrastructure.csproj">
-      <Project>{3008a7d0-c5ac-4e09-a05c-34785c1a1c67}</Project>
+      <Project>{3008A7D0-C5AC-4E09-A05C-34785C1A1C67}</Project>
       <Name>XH.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
