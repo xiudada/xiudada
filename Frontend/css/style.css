@@ -136,7 +136,7 @@ i{
 	margin-top: 50px;
 }
 
-.col-list .thumbnail{
+.col-list .thumbnail, .art-relative .thumbnail{
 	padding: 0;
 	border:none;
 	box-shadow: 0 3px 4px #e8e8e8;
@@ -167,11 +167,11 @@ i{
     line-height: 20px;  
     margin-bottom: 15px;
 }
-.col-list .thumbnail .caption h5 a{
+.col-list .thumbnail .caption h5 a, .art-relative .thumbnail .caption h5 a{
 	color: #333;
 	}
 
-.col-list .thumbnail .caption h5 a:hover, .col-list .thumbnail .caption h5 a:focus, .col-list .thumbnail .caption h5 a:active{
+.col-list .thumbnail .caption h5 a:hover, .col-list .thumbnail .caption h5 a:focus, .col-list .thumbnail .caption h5 a:active, .art-relative .thumbnail .caption h5 a:hover, .art-relative .thumbnail .caption h5 a:focus, .art-relative .thumbnail .caption h5 a:active{
 	color: #dc2f3f;
 }
 
@@ -186,12 +186,12 @@ i{
 }
 
 .art-push{
-	color:#ff6666
+	color:#ff6464;
 }
 
 .art-push:hover, .art-push:focus, .art-push:active{
 	text-decoration: none;
-	color:#FF0000 ;
+	color:#f60034 ;
 }
 
 .art-push i{
@@ -303,6 +303,9 @@ i{
 
 
 /*art-content-box*/
+.xiumii-main{
+	margin-bottom: 20px;
+}
 .art-content-box{
 	border-top: 1px solid #e8e8e8;
 
@@ -316,12 +319,12 @@ i{
 	margin-top: 5%;
 }
 
-.pub-from{ 
+.pub-editor{ 
 	margin-left: 10px;
 	color: #a9a9a9;
 }
 
-.pub-from a{
+.pub-editor a{
 	color: #a9a9a9;
 }
 
@@ -334,6 +337,7 @@ i{
 .art-content img{ 
 	display: block;
 	width: 100%;
+	margin: 20px 0;
 }
 .art-content-footer{
 	display: block;
@@ -377,6 +381,9 @@ i{
     visibility:hidden; 
     clear:both; 
 }
+.comment-list-clip:last-child dl{
+	border: none
+}
 .comment-list-clip dt{
     width: 18%;
 }
@@ -390,10 +397,48 @@ i{
 .comment-list-clip dd{
 	width: 80%;
 }
+/*comment-input*/
+.comment-input-box{
+	display: block;
+	border:1px solid #e8e8e8;
+	margin-top: 20px;
+}
+.comment-input-box .form-group{
+	margin-bottom: 0;
+	border-bottom: 1px solid #e8e8e8; 
+}
+.comment-input-box input[type="text"], .comment-input-box textarea{
+	border: none;
+	width: 100%;
+	padding: 10px;
+}
+.comment-input-box span{ 
+	width: 50%;
+}
+.comment-input-box input[type="text"]:focus
+	, .comment-input-box textarea:focus{
+    box-shadow: 0 0 3px #018ffc
+}
 
+.comment-input-box textarea{ 
+	min-height: 150px;
+}
+.comment-input-box button{
+	display: block;
+	width: 100%; 
+	height: 40px; 
+	line-height: 40px;
+	margin-top: 0px;
+	border: none;
+	background: #eaecee;
+}
 
-
-
+/*relative*/
+.art-relative{
+	width: 100%;
+	padding-left: 15px;
+	margin-top: 5%;
+}
 
 
 
