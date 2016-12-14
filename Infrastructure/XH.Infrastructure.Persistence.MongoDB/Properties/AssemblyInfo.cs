@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("XH.Infrastructure.Domain")]
+[assembly: AssemblyTitle("XH.Infrastructure.Persistence.MongoDB")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("XH.Infrastructure.Domain")]
+[assembly: AssemblyProduct("XH.Infrastructure.Persistence.MongoDB")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("bf5c7752-4b22-4f5b-8a76-3baa5f216a45")]
+[assembly: Guid("7d656741-3e91-473c-ba4d-5ff615090070")]
 
 // 程序集的版本信息由下列四个值组成: 
 //
