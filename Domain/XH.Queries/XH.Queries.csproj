@@ -1,15 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{86A9E837-7348-4F16-9E6C-5B2BFEF6011F}</ProjectGuid>
+    <ProjectGuid>930727b1-8eea-4cbf-8079-63e150aa4a5f</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XH.Domain</RootNamespace>
-    <AssemblyName>XH.Domain</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <RootNamespace>XH.Queries</RootNamespace>
+    <AssemblyName>XH.Queries</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -30,35 +30,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System"/>
+    
+    <Reference Include="System.Core"/>
+    <Reference Include="System.Xml.Linq"/>
+    <Reference Include="System.Data.DataSetExtensions"/>
+    
+    
+    <Reference Include="Microsoft.CSharp"/>
+    
+    <Reference Include="System.Data"/>
+    
+    <Reference Include="System.Net.Http"/>
+    
+    <Reference Include="System.Xml"/>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Catalogs\Models\Article.cs" />
-    <Compile Include="Catalogs\Models\Category.cs" />
-    <Compile Include="Catalogs\Repositories\ArticleRepository.cs" />
-    <Compile Include="Catalogs\Repositories\IArticleRepository.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Seo\Models\SEOMetaData.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Infrastructure\XH.Infrastructure.Persistence.MongoDB\XH.Infrastructure.Persistence.MongoDb.csproj">
-      <Project>{7D656741-3E91-473C-BA4D-5FF615090070}</Project>
-      <Name>XH.Infrastructure.Persistence.MongoDb</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Infrastructure\XH.Infrastructure\XH.Infrastructure.csproj">
-      <Project>{3008A7D0-C5AC-4E09-A05C-34785C1A1C67}</Project>
-      <Name>XH.Infrastructure</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Catalogs\Configs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -68,4 +57,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-</Project>
+
+ </Project>

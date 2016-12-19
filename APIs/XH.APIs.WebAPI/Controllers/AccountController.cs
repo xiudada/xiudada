@@ -5,7 +5,6 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Swashbuckle.Swagger.Annotations;
-using PagedList;
 
 namespace XH.APIs.WebAPI.Controllers
 {
