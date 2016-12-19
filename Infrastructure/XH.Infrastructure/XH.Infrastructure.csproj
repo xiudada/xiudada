@@ -107,7 +107,10 @@
     <Compile Include="Exceptions\XHException.cs" />
     <Compile Include="Models\XHException.cs" />
     <Compile Include="Models\Singleton.cs" />
+    <Compile Include="Query\IListQuery.cs" />
+    <Compile Include="Query\InMemoryQueryBus.cs" />
     <Compile Include="Query\IQuery.cs" />
+    <Compile Include="Query\IQueryBus.cs" />
     <Compile Include="Query\IQueryHandler.cs" />
     <Compile Include="Caching\ICacheManager.cs" />
     <Compile Include="Caching\MemoryCacheManager.cs" />
@@ -129,6 +132,9 @@
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Query\ListQueryBase.cs" />
+    <Compile Include="Query\QueryBase.cs" />
+    <Compile Include="Query\SortItem.cs" />
     <Compile Include="Reflection\AppDomainTypeFinder.cs" />
     <Compile Include="Reflection\ITypeFinder.cs" />
     <Compile Include="Reflection\WebAppTypeFinder.cs" />
@@ -140,6 +146,12 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Global\XH.Shared\XH.Shared.csproj">
+      <Project>{452EBB02-3BE0-4D74-98A2-2AF82A80ED16}</Project>
+      <Name>XH.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
