@@ -52,9 +52,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\XH.Infrastructure.Persistence.MongoDB\XH.Infrastructure.Persistence.MongoDb.csproj">
+      <Project>{7D656741-3E91-473C-BA4D-5FF615090070}</Project>
+      <Name>XH.Infrastructure.Persistence.MongoDb</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Infrastructure\XH.Infrastructure\XH.Infrastructure.csproj">
       <Project>{3008A7D0-C5AC-4E09-A05C-34785C1A1C67}</Project>
       <Name>XH.Infrastructure</Name>
