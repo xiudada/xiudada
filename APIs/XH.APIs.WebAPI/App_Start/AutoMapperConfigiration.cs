@@ -14,7 +14,7 @@ namespace XH.APIs.WebAPI.App_Start
     /// </summary>
     public class WebApiAutoMapperConfigiration : IAutoMapperConfiguration
     {
-        Singleton<IContainer> 
+         
 
         /// <summary>
         /// 
@@ -22,7 +22,7 @@ namespace XH.APIs.WebAPI.App_Start
         /// <param name="cfg"></param>
         public void Register(IMapperConfigurationExpression cfg)
         {
-            
+            Singleton<IContainer>.Instance.Resolve<>
         }
     }
 }
