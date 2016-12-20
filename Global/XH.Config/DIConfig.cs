@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using XH.Infrastructure.Query;
 using XH.Infrastructure.Persistence.MongoDb.Configuration;
+using XH.Infrastructure.Bus;
 
 namespace XH.Config
 {
@@ -51,29 +52,28 @@ namespace XH.Config
 
         private static void RegisterPersistence(ContainerBuilder container)
         {
-            //container.Register<MongoDbConfiguration>().As<IMongoDbConfiguration>
+            container.RegisterType<MongoDbConfiguration>().As<IMongoDbConfiguration>();
         }
 
         private static void RegisterCommandHandlers(ContainerBuilder container)
         {
-
+            container.RegisterType<InMemoryCommandBus>().As<ICommandBus>();
         }
 
         private static void RegisterEventHandlers(ContainerBuilder container)
         {
-
+            container.RegisterType<InMemoryEventBus>().As<IEventBus>();
         }
 
         private static void RegisterQueryHandlers(ContainerBuilder container)
         {
             container.RegisterType<InMemoryQueryBus>().As<IQueryBus>();
-
+            
         }
 
         private static void RegisterComponents(ContainerBuilder container)
         {
 
         }
-
     }
 }

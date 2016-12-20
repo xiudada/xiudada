@@ -38,6 +38,10 @@
       <HintPath>..\..\packages\Autofac.Mvc5.4.0.0\lib\net451\Autofac.Integration.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
@@ -86,7 +90,6 @@
   <ItemGroup>
     <Compile Include="Bus\IBus.cs" />
     <Compile Include="Bus\InMemoryEventBus.cs" />
-    <Compile Include="Config\IConfig.cs" />
     <Compile Include="Config\XHConfig.cs" />
     <Compile Include="Dependency\ContainerManager.cs" />
     <Compile Include="Dependency\IContainerManager.cs" />
@@ -118,13 +121,12 @@
     <Compile Include="Event\IEventHandler.cs" />
     <Compile Include="Exceptions\EntityNotFoundException.cs" />
     <Compile Include="Exceptions\XHException.cs" />
+    <Compile Include="Mapper\IAutoMapperConfiguration.cs" />
     <Compile Include="Models\XHException.cs" />
     <Compile Include="Models\Singleton.cs" />
     <Compile Include="Paging\PagedList.cs" />
     <Compile Include="Query\IListQuery.cs" />
-    <Compile Include="Query\InMemoryQueryBus.cs" />
     <Compile Include="Query\IQuery.cs" />
-    <Compile Include="Query\IQueryBus.cs" />
     <Compile Include="Query\IQueryHandler.cs" />
     <Compile Include="Caching\ICacheManager.cs" />
     <Compile Include="Caching\MemoryCacheManager.cs" />

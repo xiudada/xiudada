@@ -19,16 +19,22 @@ namespace XH.APIs.WebAPI
         /// <param name="config"></param>
         public static void Register(HttpConfiguration config)
         {
-            //// Web API 配置和服务
-            EnableCorsAttribute enableCorsAttribute = new EnableCorsAttribute("*", "*", "*", "*");
-            enableCorsAttribute.SupportsCredentials = true;
-            enableCorsAttribute.PreflightMaxAge = 60;
-            config.EnableCors(enableCorsAttribute);
+            RegisterCors(config);
+            RegisterFilters(config);
+            RegisterRoutes(config);
 
             // Format
             JsonMediaTypeFormatter jsonFormatter = config.Formatters.JsonFormatter;
             jsonFormatter.SerializerSettings.Converters.Add(new StringEnumConverter());
+        }
 
+        private static void RegisterFilters(HttpConfiguration config)
+        {
+            
+        }
+
+        private static void RegisterRoutes(HttpConfiguration config)
+        {
             // Web API 路由
             config.MapHttpAttributeRoutes();
 
@@ -37,6 +43,14 @@ namespace XH.APIs.WebAPI
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+        }
+
+        private static void RegisterCors(HttpConfiguration config)
+        {
+            EnableCorsAttribute enableCorsAttribute = new EnableCorsAttribute("*", "*", "*", "*");
+            enableCorsAttribute.SupportsCredentials = true;
+            enableCorsAttribute.PreflightMaxAge = 60;
+            config.EnableCors(enableCorsAttribute);
         }
     }
 }

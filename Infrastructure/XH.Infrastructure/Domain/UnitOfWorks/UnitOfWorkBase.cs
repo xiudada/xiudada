@@ -12,7 +12,6 @@ namespace XH.Infrastructure.Domain.UnitOfWorks
     {
         public string Id { get; private set; }
 
-        [DoNotWire]
         public IUnitOfWork Outer { get; set; }
 
         /// <inheritdoc/>
