@@ -46,11 +46,7 @@ namespace XH.Console.NH
                     {
                         Region = "china",
                         City = "sanming",
-                        Address = "youxi",
-                        SubTitle = new InnerTestClass
-                        {
-                            SubTitle = "optional sub title"
-                        }
+                        Address = "youxi"
                     }
                 }
             };

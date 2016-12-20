@@ -21,31 +21,38 @@ namespace XH.Console.NH.BookChoice
         {
             Dictionary<string, object> customAttributes = new Dictionary<string, object>();
 
-            // reflect all property with customAttribute field
-            var type = @object.GetType();
-            var propertys = type.GetProperties();
-
-            foreach (var property in propertys)
+            if (@object != null)
             {
-                // judge if this is target property
-                var customFieldAttribute = property.GetCustomAttributes(_customAttributeFieldType, true).FirstOrDefault() as CustomAttributeFieldAttribute;
-                if (customFieldAttribute != null)
+                foreach (var property in @object.GetType().GetProperties())
                 {
-                    string key = $"{attributeNamePrefix}{customFieldAttribute.CustomeAttributeName}";
                     object value = property.GetValue(@object);
-
-                    customAttributes[key] = value;
-                }
-                else
-                {
-                    var customAttribute = property.GetCustomAttributes(_customAttributeType, true).FirstOrDefault() as CustomAttributeAttribute;
-                    if (customAttribute != null)
+                    if (value == null)
                     {
-                        var innerCustomeAttributes = InternalResolveCustomAttribute(property.GetValue(@object), customAttribute.Prefix);
+                        continue;
+                    }
 
-                        foreach (var keyValuePair in innerCustomeAttributes)
+                    // judge if this is target property
+                    var customFieldAttribute = property.GetCustomAttributes(_customAttributeFieldType, true).FirstOrDefault() as CustomAttributeFieldAttribute;
+                    if (customFieldAttribute != null)
+                    {
+                        string attributeName = !String.IsNullOrEmpty(customFieldAttribute.AttributeName) ? customFieldAttribute.AttributeName : property.Name;
+                        string prefix = customFieldAttribute.AppendPrefix ? attributeNamePrefix : String.Empty;
+                        string key = $"{prefix}{attributeName}";
+
+                        // Over write
+                        customAttributes[key] = value;
+                    }
+                    else
+                    {
+                        var customAttribute = property.GetCustomAttributes(_customAttributeType, true).FirstOrDefault() as CustomAttributeAttribute;
+                        if (customAttribute != null)
                         {
-                            customAttributes[keyValuePair.Key] = keyValuePair.Value;
+                            var innerCustomeAttributes = InternalResolveCustomAttribute(value, $"{attributeNamePrefix}{customAttribute.Prefix}");
+
+                            foreach (var keyValuePair in innerCustomeAttributes)
+                            {
+                                customAttributes[keyValuePair.Key] = keyValuePair.Value;
+                            }
                         }
                     }
                 }

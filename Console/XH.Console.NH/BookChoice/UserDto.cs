@@ -25,25 +25,25 @@ namespace XH.Console.NH.BookChoice
         [CustomAttributeField("Text_City")]
         public string City { get; set; }
 
-        [CustomAttributeField("Text_Address")]
+        [CustomAttributeField]
         public string Address { get; set; }
 
-        [CustomAttribute]
+        [CustomAttribute(Prefix = "Loc_")]
         public InnerTestClass SubTitle { get; set; }
     }
 
     public class InnerTestClass
     {
-        [CustomAttributeField("SubTitle")]
+        [CustomAttributeField("SubTitle", AppendPrefix = false)]
         public string SubTitle { get; set; }
     }
 
     public class TestClass
     {
-        [CustomAttribute(IsComplexType = true, Prefix = "ACT_")]
+        [CustomAttribute(Prefix = "ACT_")]
         public Location Location { get; set; }
 
-        [CustomAttribute(IsComplexType = true, Prefix = "OPT_")]
+        [CustomAttribute(Prefix = "OPT_")]
         public Location OptionalLocation { get; set; }
     }
 }

@@ -9,21 +9,20 @@ namespace XH.Console.NH.BookChoice
     [AttributeUsage(AttributeTargets.Property)]
     public class CustomAttributeFieldAttribute : Attribute
     {
-        public CustomAttributeFieldAttribute(string attributeName)
+        public CustomAttributeFieldAttribute() : this(String.Empty)
         {
-            if (String.IsNullOrEmpty(attributeName))
-            {
-                throw new ArgumentException("Attribute name should not be empty");
-            }
-
-            CustomeAttributeName = attributeName;
         }
 
-        public string CustomeAttributeName { get; set; }
+        public CustomAttributeFieldAttribute(string attributeName)
+        {
+            AttributeName = attributeName;
+        }
+
+        public string AttributeName { get; set; }
 
         /// <summary>
-        /// 
+        /// true by default
         /// </summary>
-        public bool IsComplexType { get; set; }
+        public bool AppendPrefix { get; set; } = true;
     }
 }
