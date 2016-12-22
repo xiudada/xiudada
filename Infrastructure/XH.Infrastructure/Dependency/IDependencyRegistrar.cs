@@ -1,27 +1,19 @@
-﻿using Autofac;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using XH.Infrastructure.Config;
-using XH.Infrastructure.Reflection;
+using Autofac;
 
 namespace XH.Infrastructure.Dependency
 {
     public interface IDependencyRegistrar
     {
-        /// <summary>
-        /// Register services and interfaces
-        /// </summary>
-        /// <param name="builder">Container builder</param>
-        /// <param name="typeFinder">Type finder</param>
-        /// <param name="config">Config</param>
-        void Register(ContainerBuilder builder, ITypeFinder typeFinder, XHConfig config);
+        void Register(ContainerBuilder builder, IDependencyRegistrarContext context);
 
         /// <summary>
-        /// Order of this dependency registrar implementation
+        /// 优先级
         /// </summary>
-        int Order { get; }
+        int Priority { get; }
     }
 }

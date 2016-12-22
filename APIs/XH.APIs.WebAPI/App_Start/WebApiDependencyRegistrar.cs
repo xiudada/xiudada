@@ -1,23 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using Autofac;
+using Autofac.Integration.WebApi;
+using XH.Infrastructure.Dependency;
 
 namespace XH.APIs.WebAPI.App_Start
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public class WebApiDependencyRegistrar
+    public class WebApiDependencyRegistrar : IDependencyRegistrar
     {
-        /// <summary>
-        /// Register
-        /// </summary>
-        /// <param name="container"></param>
-        public static void Register(IContainer container)
+        public int Priority { get; set; }
+
+        public void Register(ContainerBuilder builder, IDependencyRegistrarContext context)
         {
-            DIConfig
+            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
         }
     }
 }

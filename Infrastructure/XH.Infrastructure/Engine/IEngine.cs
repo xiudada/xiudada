@@ -10,7 +10,7 @@ namespace XH.Infrastructure.Engine
 {
     public interface IEngine
     {
-        IContainerManager ContainerManager { get; }
+        IIocManager ContainerManager { get; }
 
         /// <summary>
         /// Initialize components and plugins in the nop environment.

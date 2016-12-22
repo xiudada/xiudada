@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
+using Autofac.Integration.WebApi;
 using Owin;
+using XH.Infrastructure.Dependency;
 
 namespace XH.APIs.WebAPI
 {
@@ -22,6 +24,11 @@ namespace XH.APIs.WebAPI
             config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
             WebApiConfig.Register(config);
 
+            IocManager.Instance.Initialize();
+
+            config.DependencyResolver = new AutofacWebApiDependencyResolver(IocManager.Instance.IocContainer);
+            app.UseAutofacMiddleware(IocManager.Instance.IocContainer);
+            app.UseAutofacWebApi(config);
             app.UseWebApi(config);
         }
     }

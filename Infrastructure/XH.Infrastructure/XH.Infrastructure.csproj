@@ -91,10 +91,14 @@
     <Compile Include="Bus\IBus.cs" />
     <Compile Include="Bus\InMemoryEventBus.cs" />
     <Compile Include="Config\XHConfig.cs" />
-    <Compile Include="Dependency\ContainerManager.cs" />
-    <Compile Include="Dependency\IContainerManager.cs" />
+    <Compile Include="Dependency\CoreDependencyRegistrar.cs" />
+    <Compile Include="Dependency\DependencyRegistrarContext.cs" />
     <Compile Include="Dependency\IDependencyRegistrar.cs" />
+    <Compile Include="Dependency\IDependencyRegistrarContext.cs" />
     <Compile Include="Dependency\IDependencyResolver.cs" />
+    <Compile Include="Dependency\IIocManager.cs" />
+    <Compile Include="Dependency\IocManager.cs" />
+    <Compile Include="Dependency\IocResolver.cs" />
     <Compile Include="Domain\Models\FullAuditableEntity.cs" />
     <Compile Include="Domain\Models\IAggregateRoot.cs" />
     <Compile Include="Domain\Models\IEntityOfTPrimaryKey.cs" />
@@ -102,16 +106,6 @@
     <Compile Include="Domain\Repositories\IRepositoryOfTEntity.cs" />
     <Compile Include="Domain\Repositories\IRepositoryOfTEntityAndTPrimaryKey.cs" />
     <Compile Include="Domain\Repositories\RepositoryBase.cs" />
-    <Compile Include="Domain\UnitOfWorks\UnitOfWorkFailedEventArgs.cs" />
-    <Compile Include="Domain\UnitOfWorks\DataFilterConfiguration.cs" />
-    <Compile Include="Domain\UnitOfWorks\DataFilters.cs" />
-    <Compile Include="Domain\UnitOfWorks\IUnitOfWork.cs" />
-    <Compile Include="Domain\UnitOfWorks\IUnitOfWorkDefaultOptions.cs" />
-    <Compile Include="Domain\UnitOfWorks\UnitOfWorkBase.cs" />
-    <Compile Include="Domain\UnitOfWorks\UnitOfWorkOptions.cs" />
-    <Compile Include="Engine\EngineContext.cs" />
-    <Compile Include="Engine\IEngine.cs" />
-    <Compile Include="Engine\XHEngine.cs" />
     <Compile Include="Event\IEvent.cs" />
     <Compile Include="Bus\IEventBus.cs" />
     <Compile Include="Bus\IHandler.cs" />
@@ -156,6 +150,8 @@
     <Compile Include="Reflection\WebAppTypeFinder.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Domain\UnitOfWorks\" />
+    <Folder Include="Engine\" />
     <Folder Include="Utility\" />
   </ItemGroup>
   <ItemGroup>

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace XH.Infrastructure.Paging
+namespace XH.Queries.Articles.Dtos
 {
-    public class PagedList
+    public class ArticleOverviewDto
     {
+        public string Title { get; set; }
     }
 }

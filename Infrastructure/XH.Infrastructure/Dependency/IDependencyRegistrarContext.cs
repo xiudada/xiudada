@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace XH.Queries.Articles
+namespace XH.Infrastructure.Dependency
 {
-    class ListArticlesQuery: ListQueryBase
+    public interface IDependencyRegistrarContext
     {
+        IIocManager IocManager { get; set; }
     }
 }

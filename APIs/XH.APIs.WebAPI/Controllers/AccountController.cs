@@ -19,10 +19,8 @@ namespace XH.APIs.WebAPI.Controllers
         /// </summary>
         /// <returns></returns>
         [SwaggerResponse(HttpStatusCode.OK, "list users", typeof(String))]
-        public IHttpActionResult ListUsers(ListUserQuery)
+        public IHttpActionResult ListUsers(ListUserQuery query)
         {
-
-
             return Ok();
         }
 

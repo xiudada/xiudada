@@ -9,20 +9,4 @@ using XH.Infrastructure.Models;
 
 namespace XH.APIs.WebAPI.App_Start
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public class WebApiAutoMapperConfigiration : IAutoMapperConfiguration
-    {
-         
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="cfg"></param>
-        public void Register(IMapperConfigurationExpression cfg)
-        {
-            Singleton<IContainer>.Instance.Resolve<>
-        }
-    }
 }

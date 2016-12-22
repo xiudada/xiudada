@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace XH.Infrastructure.Paging
+namespace XH.Infrastructure.Dependency
 {
-    public class PagedList
+    public interface IocResolver
     {
+
     }
 }

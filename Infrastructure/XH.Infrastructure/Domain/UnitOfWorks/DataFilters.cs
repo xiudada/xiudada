@@ -42,4 +42,3 @@ namespace XH.Infrastructure.Domain.UnitOfWorks
         }
     }
 }
-}

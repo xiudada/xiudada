@@ -14,9 +14,9 @@ namespace XH.Infrastructure.Engine
 {
     public class XHEngine : IEngine
     {
-        private IContainerManager _containerManager;
+        private IIocManager _containerManager;
 
-        public IContainerManager ContainerManager
+        public IIocManager ContainerManager
         {
             get
             {
