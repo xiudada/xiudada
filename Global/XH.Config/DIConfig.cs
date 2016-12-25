@@ -52,7 +52,6 @@ namespace XH.Config
 
         private static void RegisterPersistence(ContainerBuilder container)
         {
-            container.RegisterType<MongoDbConfiguration>().As<IMongoDbConfiguration>();
         }
 
         private static void RegisterCommandHandlers(ContainerBuilder container)
@@ -68,7 +67,7 @@ namespace XH.Config
         private static void RegisterQueryHandlers(ContainerBuilder container)
         {
             container.RegisterType<InMemoryQueryBus>().As<IQueryBus>();
-            
+
         }
 
         private static void RegisterComponents(ContainerBuilder container)

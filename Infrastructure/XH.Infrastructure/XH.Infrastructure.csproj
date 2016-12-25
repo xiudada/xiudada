@@ -90,6 +90,7 @@
   <ItemGroup>
     <Compile Include="Bus\IBus.cs" />
     <Compile Include="Bus\InMemoryEventBus.cs" />
+    <Compile Include="Command\CommandBase.cs" />
     <Compile Include="Config\XHConfig.cs" />
     <Compile Include="Dependency\CoreDependencyRegistrar.cs" />
     <Compile Include="Dependency\DependencyRegistrarContext.cs" />

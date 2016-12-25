@@ -11,7 +11,7 @@ using XH.Infrastructure.Exceptions;
 
 namespace XH.Infrastructure.Persistence.MongoDb.Repositories
 {
-    public abstract class MongoDbRepositoryBase<TEntity> : MongoDbRepositoryBase<TEntity, string> where TEntity : class, IEntity<string>
+    public class MongoDbRepositoryBase<TEntity> : MongoDbRepositoryBase<TEntity, string>, IRepository<TEntity> where TEntity : class, IEntity<string>
     {
         public MongoDbRepositoryBase(IMongoDatabaseProvider databaseProvider) : base(databaseProvider)
         {

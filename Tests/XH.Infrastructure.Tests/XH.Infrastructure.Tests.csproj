@@ -56,11 +56,24 @@
   <ItemGroup>
     <Compile Include="Dependency\IocManager_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\MongoRepository_Tests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Domain\XH.Domain\XH.Domain.csproj">
+      <Project>{86A9E837-7348-4F16-9E6C-5B2BFEF6011F}</Project>
+      <Name>XH.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Domain\XH.Queries\XH.Queries.csproj">
       <Project>{930727b1-8eea-4cbf-8079-63e150aa4a5f}</Project>
       <Name>XH.Queries</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Global\XH.Config\XH.Config.csproj">
+      <Project>{50e442fe-fad3-4b30-9590-749db8159f66}</Project>
+      <Name>XH.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\XH.Infrastructure.Persistence.MongoDB\XH.Infrastructure.Persistence.MongoDb.csproj">
+      <Project>{7d656741-3e91-473c-ba4d-5ff615090070}</Project>
+      <Name>XH.Infrastructure.Persistence.MongoDb</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Infrastructure\XH.Infrastructure\XH.Infrastructure.csproj">
       <Project>{3008a7d0-c5ac-4e09-a05c-34785c1a1c67}</Project>

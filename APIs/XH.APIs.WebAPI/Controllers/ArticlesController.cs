@@ -8,6 +8,7 @@ using XH.Infrastructure.Bus;
 using XH.Queries.Articles.Queries;
 using XH.Queries.Articles.Dtos;
 using Swashbuckle.Swagger.Annotations;
+using XH.APIs.WebAPI.Models.Articles;
 
 namespace XH.APIs.WebAPI.Controllers
 {
@@ -48,6 +49,19 @@ namespace XH.APIs.WebAPI.Controllers
 
             var dto = _queryBus.Send<GetArticleQuery, ArticleDto>(query);
             return Ok(dto);
+        }
+
+        /// <summary>
+        /// Create article
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("")]
+        [SwaggerResponse(200, "Success")]
+        public IHttpActionResult CreateArticle(CreateArticleRequest request)
+        {
+            return Ok();
         }
     }
 }

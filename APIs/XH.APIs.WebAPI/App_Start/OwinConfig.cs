@@ -25,7 +25,6 @@ namespace XH.APIs.WebAPI
             WebApiConfig.Register(config);
 
             IocManager.Instance.Initialize();
-
             config.DependencyResolver = new AutofacWebApiDependencyResolver(IocManager.Instance.IocContainer);
             app.UseAutofacMiddleware(IocManager.Instance.IocContainer);
             app.UseAutofacWebApi(config);
