@@ -5709,6 +5709,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Templates\articles\overview.tpl.html" />
     <Content Include="Templates\home\dashboard.tpl.html" />
     <Content Include="Templates\layout\footer.html" />
     <Content Include="Templates\layout\header.html" />
