@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Swashbuckle.Swagger.Annotations;
 using XH.APIs.WebAPI.Models.Install;
 using XH.Configurations;
 
@@ -27,6 +28,8 @@ namespace XH.APIs.WebAPI.Controllers
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
+        [HttpPost]
+        [Route("mongodb")]
         public IHttpActionResult UpdateMongoDBConfiguration(UpdateMongoDbConfigurationRequest request)
         {
             _configurationProvider.SaveConfiguration(new MongoDBConfig
@@ -36,6 +39,16 @@ namespace XH.APIs.WebAPI.Controllers
             });
 
             return Ok();
+        }
+
+
+        [HttpGet]
+        [Route("mongodb")]
+        [SwaggerResponse(HttpStatusCode.OK, "Success", typeof(MongoDBConfig))]
+        public IHttpActionResult GetMongoDBConfiguration()
+        {
+            var config = _configurationProvider.GetConfiguration<MongoDBConfig>();
+            return Ok(config);
         }
     }
 }
