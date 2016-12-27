@@ -8,7 +8,6 @@ namespace XH.Presentation.Admin
     {
         public void Configuration(IAppBuilder app)
         {
-             
         }
     }
 }

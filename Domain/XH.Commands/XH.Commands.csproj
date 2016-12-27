@@ -66,6 +66,10 @@
       <Project>{86A9E837-7348-4F16-9E6C-5B2BFEF6011F}</Project>
       <Name>XH.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\XH.Events\XH.Events.csproj">
+      <Project>{a0187e2e-a3ea-4be1-a748-99bde7348638}</Project>
+      <Name>XH.Events</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

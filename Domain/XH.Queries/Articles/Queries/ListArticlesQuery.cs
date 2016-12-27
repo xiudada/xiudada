@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using XH.Infrastructure.Query;
 
-namespace XH.Queries.Articles
+namespace XH.Queries.Articles.Queries
 {
     public class ListArticlesQuery : ListQueryBase
     {

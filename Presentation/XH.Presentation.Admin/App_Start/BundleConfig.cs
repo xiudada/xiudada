@@ -25,7 +25,8 @@ namespace XH.Presentation.Admin
                 "~/assets/global/css/plugins.min.css",
                 "~/assets/layouts/layout/css/layout.min.css",
                 "~/assets/layouts/layout/css/themes/darkblue.min.css",
-                "~/assets/layouts/layout/css/custom.min.css"
+                "~/assets/layouts/layout/css/custom.min.css",
+                "~/assets/custom/custom.css"
             };
 
             var styleBundle = new StyleBundle("~/css/main");
@@ -50,6 +51,7 @@ namespace XH.Presentation.Admin
                 "~/assets/global/plugins/angularjs/plugins/angular-ui-router.min.js",
                 "~/assets/global/plugins/angularjs/plugins/ocLazyLoad.min.js",
                 "~/assets/global/plugins/angularjs/plugins/ui-bootstrap-tpls.min.js",
+                "~/assets/global/plugins/angularjs/plugins/angular-resource.js",
                 "~/assets/global/scripts/app.min.js",
                 "~/assets/layouts/layout/scripts/layout.min.js",
                 "~/assets/layouts/global/scripts/quick-sidebar.min.js",

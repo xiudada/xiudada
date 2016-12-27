@@ -29,6 +29,16 @@ function ($stateProvider, $urlRouterProvider, $locationProvider) {
                     permissioncode: 'open'
                 }
             }
+        ],
+        articles: [
+            {
+                name: "articles:overview",
+                config: {
+                    url: "/articles/overview",
+                    templateUrl: "/Templates/articles/overview.tpl.html",
+                    controller:"articlesController"
+                }
+            }
         ]
     }
 

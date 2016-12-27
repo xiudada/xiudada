@@ -9,5 +9,8 @@ namespace XH.Commands.Articles.Commands
 {
     public class CreateOrUpdateArticleCommandBase : CommandBase
     {
+        public string Title { get; set; }
+
+        public string Content { get; set; }
     }
 }

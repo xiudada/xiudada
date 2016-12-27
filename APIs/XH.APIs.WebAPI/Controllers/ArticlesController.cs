@@ -11,6 +11,8 @@ using Swashbuckle.Swagger.Annotations;
 using XH.APIs.WebAPI.Models.Articles;
 using AutoMapper;
 using XH.Commands.Articles.Commands;
+using XH.Queries.Articles;
+using XH.Infrastructure.Paging;
 
 namespace XH.APIs.WebAPI.Controllers
 {
@@ -34,6 +36,23 @@ namespace XH.APIs.WebAPI.Controllers
             _queryBus = queryBus;
             _commandBus = commandBus;
             _mapper = mapper;
+        }
+
+        /// <summary>
+        /// List
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("list")]
+        [SwaggerResponse(200, "Success", typeof(PagedList<ArticleOverviewDto>))]
+        public IHttpActionResult ListArticles(ListArticlesRequest request)
+        {
+            var query = _mapper.Map<ListArticlesQuery>(request);
+
+            var pagedList = _queryBus.Send<ListArticlesQuery, PagedList<ArticleOverviewDto>>(query);
+
+            return Ok(pagedList);
         }
 
         /// <summary>

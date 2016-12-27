@@ -19,6 +19,7 @@ namespace XH.Queries.Articles.Configs
         public void Register(IMapperConfigurationExpression cfg)
         {
             cfg.CreateMap<Article, ArticleDto>();
+            cfg.CreateMap<Article, ArticleOverviewDto>();
         }
     }
 }

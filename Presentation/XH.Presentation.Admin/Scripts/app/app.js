@@ -3,7 +3,8 @@ var xiudadaApp = angular.module("xiudadaApp", [
     "ui.router",
     "ui.bootstrap",
     "oc.lazyLoad",
-    "ngSanitize"
+    "ngSanitize",
+    "ngResource"
 ]);
 
 /* Configure ocLazyLoader(refer: https://github.com/ocombe/ocLazyLoad) */
@@ -38,6 +39,9 @@ xiudadaApp.factory('settings', ['$rootScope', function ($rootScope) {
     return settings;
 }]);
 
+xiudadaApp.constant("siteConfiguration", {
+    "apiDomain": "http://api.xiudada.com"
+});
 
 /* Init global settings and run the app */
 xiudadaApp.run(["$rootScope", "settings", "$state", function ($rootScope, settings, $state) {

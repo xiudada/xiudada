@@ -11,6 +11,7 @@ using XH.Queries.Articles.Queries;
 using XH.Queries.Articles.Dtos;
 using XH.Queries.Articles.Configs;
 using XH.Infrastructure.Mapper;
+using XH.Infrastructure.Paging;
 
 namespace XH.Queries
 {
@@ -27,6 +28,8 @@ namespace XH.Queries
         public void Register(ContainerBuilder containerBuilder, IDependencyRegistrarContext context)
         {
             containerBuilder.RegisterType<ArticleQueryHandler>().As<IQueryHandler<GetArticleQuery, ArticleDto>>();
+            containerBuilder.RegisterType<ArticleQueryHandler>().As<IQueryHandler<ListArticlesQuery, PagedList<ArticleOverviewDto>>>();
+
             containerBuilder.RegisterType<AritclesMapperRegistrar>();
         }
     }

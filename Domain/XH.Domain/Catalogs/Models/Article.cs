@@ -13,7 +13,6 @@ namespace XH.Domain.Catalogs.Models
     /// </summary>
     public class Article : FullAuditableEntity, IAggregateRoot
     {
-
         public virtual string Title { get; set; }
 
         public virtual string Content { get; set; }

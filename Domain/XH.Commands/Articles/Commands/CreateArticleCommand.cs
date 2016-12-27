@@ -12,6 +12,6 @@ namespace XH.Commands.Articles.Commands
     /// </summary>
     public class CreateArticleCommand : CreateOrUpdateArticleCommandBase
     {
-        public string Title { get; set; }
+
     }
 }

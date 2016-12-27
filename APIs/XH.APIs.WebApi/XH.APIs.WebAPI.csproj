@@ -177,16 +177,15 @@
     </Compile>
     <Compile Include="Models\Articles\CreateArticleRequest.cs" />
     <Compile Include="Models\Articles\CreateOrUpdateArticleRequestBase.cs" />
+    <Compile Include="Models\Articles\ListArticlesRequest.cs" />
     <Compile Include="Models\Articles\UpdateArticleRequest.cs" />
     <Compile Include="Models\Install\UpdateMongoDbConfigurationRequest.cs" />
+    <Compile Include="Models\Shared\ListRequestBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Configs\MongoDBConfig.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -1,0 +1,20 @@
+﻿<h3 class="page-title">
+    Articles overview
+</h3>
+<div class="portlet light bordered">
+    <div class="portlet-title">
+        <div class="caption font-green-sharp">
+            <i class="fa fa-list font-green-sharp"></i> Article list
+        </div>
+    </div>
+    <div class="portlet-body">
+        <ul>
+            <li ng-repeat="item in articles">
+                <div>
+                    <h2>{{item.Title}}</h2>
+                    <div>{{item.Content}}</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
