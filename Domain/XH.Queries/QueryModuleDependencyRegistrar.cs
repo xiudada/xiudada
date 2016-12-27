@@ -9,6 +9,8 @@ using XH.Queries.Articles.QueryHanlders;
 using XH.Infrastructure.Query;
 using XH.Queries.Articles.Queries;
 using XH.Queries.Articles.Dtos;
+using XH.Queries.Articles.Configs;
+using XH.Infrastructure.Mapper;
 
 namespace XH.Queries
 {
@@ -18,13 +20,14 @@ namespace XH.Queries
         {
             get
             {
-                return 10;
+                return 1000;
             }
         }
 
         public void Register(ContainerBuilder containerBuilder, IDependencyRegistrarContext context)
         {
             containerBuilder.RegisterType<ArticleQueryHandler>().As<IQueryHandler<GetArticleQuery, ArticleDto>>();
+            containerBuilder.RegisterType<AritclesMapperRegistrar>();
         }
     }
 }

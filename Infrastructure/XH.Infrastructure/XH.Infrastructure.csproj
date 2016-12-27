@@ -116,7 +116,10 @@
     <Compile Include="Event\IEventHandler.cs" />
     <Compile Include="Exceptions\EntityNotFoundException.cs" />
     <Compile Include="Exceptions\XHException.cs" />
+    <Compile Include="Extensions\CacheExtensions.cs" />
+    <Compile Include="Mapper\AutoMapperConfiguration.cs" />
     <Compile Include="Mapper\IAutoMapperConfiguration.cs" />
+    <Compile Include="Mapper\IAutoMapperRegistrar.cs" />
     <Compile Include="Models\XHException.cs" />
     <Compile Include="Models\Singleton.cs" />
     <Compile Include="Paging\PagedList.cs" />

@@ -8,6 +8,7 @@ using XH.Infrastructure.Dependency;
 using XH.Commands.Articles.Commands;
 using XH.Commands.Articles.CommandHandlers;
 using XH.Infrastructure.Command;
+using XH.Commands.Articles.Configs;
 
 namespace XH.Commands
 {
@@ -20,7 +21,13 @@ namespace XH.Commands
 
         public void Register(ContainerBuilder builder, IDependencyRegistrarContext context)
         {
+            #region Articles
+
             builder.RegisterType<ArticleCommandHandler>().As<ICommandHandler<CreateArticleCommand>>();
+            builder.RegisterType<ArticleCommandHandler>().As<ICommandHandler<UpdateArticleCommand>>();
+
+            builder.RegisterType<AritclesMapperRegistrar>();
+            #endregion
         }
     }
 }

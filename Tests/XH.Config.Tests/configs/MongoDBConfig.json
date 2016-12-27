@@ -1,0 +1,4 @@
+﻿{
+  "ConnectionString": "mongodb://xiudada:9527@localhost:27017",
+  "DatabaseName": "xiudada"
+}

@@ -35,6 +35,10 @@
       <HintPath>..\..\packages\Autofac.4.2.1\lib\net45\Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Articles\Configs\AritclesMapperRegistrar.cs" />
     <Compile Include="Articles\Dtos\ArticleDto.cs" />
     <Compile Include="Articles\Dtos\ArticleOverviewDto.cs" />
     <Compile Include="Articles\Queries\GetArticleQuery.cs" />
@@ -58,8 +63,13 @@
       <Project>{3008a7d0-c5ac-4e09-a05c-34785c1a1c67}</Project>
       <Name>XH.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\XH.Domain\XH.Domain.csproj">
+      <Project>{86a9e837-7348-4f16-9e6c-5b2bfef6011f}</Project>
+      <Name>XH.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

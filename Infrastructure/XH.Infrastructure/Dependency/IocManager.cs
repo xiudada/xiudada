@@ -14,6 +14,7 @@ namespace XH.Infrastructure.Dependency
 
         private readonly ITypeFinder _typeFinder;
         private bool _isInitialized = false;
+        private IDependencyRegistrarContext _registrarContext;
 
         public IContainer IocContainer { get; set; }
 
@@ -24,28 +25,44 @@ namespace XH.Infrastructure.Dependency
             _typeFinder = typeFinder ?? new AppDomainTypeFinder();
         }
 
-        public void Initialize()
+        public void Initialize(Action<ContainerBuilder, IDependencyRegistrarContext> buildAction = null)
         {
             if (!_isInitialized)
             {
                 ContainerBuilder containerBuilder = new ContainerBuilder();
-                RegisterSelf(containerBuilder);
-
+                _registrarContext = new DependencyRegistrarContext(this);
+                IocContainer = RegisterCore(containerBuilder, _registrarContext);
                 // Get all registrars;
-                RegisterDependencies(containerBuilder);
-                IocContainer = containerBuilder.Build();
+                RegisterDependencies();
+
+                var container = new ContainerBuilder();
+                buildAction?.Invoke(container, _registrarContext);
+
+                container.Update(IocContainer);
                 _isInitialized = true;
             }
         }
 
-        private void RegisterSelf(ContainerBuilder containerBuilder)
+        public void Register(Action<ContainerBuilder, IDependencyRegistrarContext> buildAction)
+        {
+            var builder = new ContainerBuilder();
+            buildAction?.Invoke(builder, _registrarContext);
+            builder.Update(IocContainer);
+        }
+
+        private IContainer RegisterCore(ContainerBuilder containerBuilder, IDependencyRegistrarContext context)
         {
             // Register self
             containerBuilder.Register(component => this).As<IIocManager>().SingleInstance();
+            containerBuilder.RegisterInstance(context).As<IDependencyRegistrarContext>();
+            containerBuilder.RegisterInstance(_typeFinder).As<ITypeFinder>();
+
+            return containerBuilder.Build();
         }
 
-        private void RegisterDependencies(ContainerBuilder containerBuilder)
+        private void RegisterDependencies()
         {
+            
             var registrarTypes = _typeFinder.FindClassesOfType<IDependencyRegistrar>(true);
             List<IDependencyRegistrar> registrars = new List<IDependencyRegistrar>();
 
@@ -57,7 +74,9 @@ namespace XH.Infrastructure.Dependency
             registrars = registrars.OrderByDescending(it => it.Priority).ToList();
             foreach (var registrar in registrars)
             {
-                registrar.Register(containerBuilder, new DependencyRegistrarContext(this));
+                var containerBuilder = new ContainerBuilder();
+                registrar.Register(containerBuilder, _registrarContext);
+                containerBuilder.Update(IocContainer);
             }
         }
     }

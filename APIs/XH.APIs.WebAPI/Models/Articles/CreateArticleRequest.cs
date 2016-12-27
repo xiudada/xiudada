@@ -10,6 +10,5 @@ namespace XH.APIs.WebAPI.Models.Articles
     /// </summary>
     public class CreateArticleRequest : CreateOrUpdateArticleRequestBase
     {
-
     }
 }

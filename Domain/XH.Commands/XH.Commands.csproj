@@ -35,6 +35,10 @@
       <HintPath>..\..\packages\Autofac.4.2.1\lib\net45\Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,6 +51,9 @@
   <ItemGroup>
     <Compile Include="Articles\CommandHandlers\ArticleCommandHandler.cs" />
     <Compile Include="Articles\Commands\CreateArticleCommand.cs" />
+    <Compile Include="Articles\Commands\CreateOrUpdateArticleCommandBase.cs" />
+    <Compile Include="Articles\Commands\UpdateArticleCommand.cs" />
+    <Compile Include="Articles\Configs\AritclesMapperRegistrar.cs" />
     <Compile Include="CommandModuleDependencyRegistrar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -54,6 +61,10 @@
     <ProjectReference Include="..\..\Infrastructure\XH.Infrastructure\XH.Infrastructure.csproj">
       <Project>{3008A7D0-C5AC-4E09-A05C-34785C1A1C67}</Project>
       <Name>XH.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XH.Domain\XH.Domain.csproj">
+      <Project>{86A9E837-7348-4F16-9E6C-5B2BFEF6011F}</Project>
+      <Name>XH.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

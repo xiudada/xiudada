@@ -7,7 +7,7 @@ using AutoMapper;
 
 namespace XH.Infrastructure.Mapper
 {
-    public interface IAutoMapperConfiguration
+    public interface IAutoMapperRegistrar
     {
         void Register(IMapperConfigurationExpression cfg);
     }

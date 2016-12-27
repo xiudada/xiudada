@@ -94,6 +94,10 @@
       <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="NLog, Version=3.2.1.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\..\packages\NLog.3.2.1\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
@@ -107,6 +111,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
       <Private>True</Private>
@@ -141,9 +146,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http.Formatting">
       <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
@@ -161,24 +163,31 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\AutoMapperConfigiration.cs" />
     <Compile Include="App_Start\OwinConfig.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="App_Start\WebApiAutoMapperRegistrar.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="App_Start\WebApiDependencyRegistrar.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\Base\ApiControllerBase.cs" />
+    <Compile Include="Controllers\ConfigurationsController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Articles\CreateArticleRequest.cs" />
     <Compile Include="Models\Articles\CreateOrUpdateArticleRequestBase.cs" />
+    <Compile Include="Models\Articles\UpdateArticleRequest.cs" />
+    <Compile Include="Models\Install\UpdateMongoDbConfigurationRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Configs\MongoDBConfig.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Properties\PublishProfiles\publish.pubxml" />
@@ -194,9 +203,21 @@
     <Folder Include="Middleware\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Domain\XH.Commands\XH.Commands.csproj">
+      <Project>{D5870151-F74B-49C3-9256-6DC74640D676}</Project>
+      <Name>XH.Commands</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Domain\XH.Queries\XH.Queries.csproj">
       <Project>{930727b1-8eea-4cbf-8079-63e150aa4a5f}</Project>
       <Name>XH.Queries</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Global\XH.Config\XH.Configurations.csproj">
+      <Project>{50E442FE-FAD3-4B30-9590-749DB8159F66}</Project>
+      <Name>XH.Configurations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\XH.Infrastructure.Persistence.MongoDB\XH.Infrastructure.Persistence.MongoDb.csproj">
+      <Project>{7D656741-3E91-473C-BA4D-5FF615090070}</Project>
+      <Name>XH.Infrastructure.Persistence.MongoDb</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Infrastructure\XH.Infrastructure\XH.Infrastructure.csproj">
       <Project>{3008A7D0-C5AC-4E09-A05C-34785C1A1C67}</Project>

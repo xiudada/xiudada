@@ -9,6 +9,8 @@ using XH.Queries.Articles.Queries;
 using XH.Queries.Articles.Dtos;
 using Swashbuckle.Swagger.Annotations;
 using XH.APIs.WebAPI.Models.Articles;
+using AutoMapper;
+using XH.Commands.Articles.Commands;
 
 namespace XH.APIs.WebAPI.Controllers
 {
@@ -20,16 +22,18 @@ namespace XH.APIs.WebAPI.Controllers
     {
         private readonly IQueryBus _queryBus;
         private readonly ICommandBus _commandBus;
+        private readonly IMapper _mapper;
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="queryBus"></param>
         /// <param name="commandBus"></param>
-        public ArticlesController(IQueryBus queryBus, ICommandBus commandBus)
+        public ArticlesController(IQueryBus queryBus, ICommandBus commandBus, IMapper mapper)
         {
             _queryBus = queryBus;
             _commandBus = commandBus;
+            _mapper = mapper;
         }
 
         /// <summary>
@@ -61,6 +65,25 @@ namespace XH.APIs.WebAPI.Controllers
         [SwaggerResponse(200, "Success")]
         public IHttpActionResult CreateArticle(CreateArticleRequest request)
         {
+            var command = _mapper.Map<CreateArticleCommand>(request);
+            _commandBus.Send(command);
+
+            return Ok();
+        }
+
+        /// <summary>
+        /// Create article
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPut]
+        [Route("")]
+        [SwaggerResponse(200, "Success")]
+        public IHttpActionResult CreateArticle(UpdateArticleRequest request)
+        {
+            var command = _mapper.Map<CreateArticleCommand>(request);
+            _commandBus.Send(command);
+
             return Ok();
         }
     }

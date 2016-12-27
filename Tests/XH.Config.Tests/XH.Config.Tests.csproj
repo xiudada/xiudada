@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F05BF1EC-32DB-4A4C-91E1-8D57940D3E1A}</ProjectGuid>
+    <ProjectGuid>{0A7FD463-E2F8-4E25-8384-1988B88DE098}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XH.Infrastructure.Tests</RootNamespace>
-    <AssemblyName>XH.Infrastructure.Tests</AssemblyName>
+    <RootNamespace>XH.Config.Tests</RootNamespace>
+    <AssemblyName>XH.Config.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -54,34 +54,26 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Dependency\IocManager_Tests.cs" />
+    <Compile Include="Configuration\LocalConfigurationProvider_Tests.cs" />
+    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\MongoRepository_Tests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Domain\XH.Domain\XH.Domain.csproj">
-      <Project>{86A9E837-7348-4F16-9E6C-5B2BFEF6011F}</Project>
-      <Name>XH.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Domain\XH.Queries\XH.Queries.csproj">
-      <Project>{930727b1-8eea-4cbf-8079-63e150aa4a5f}</Project>
-      <Name>XH.Queries</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Global\XH.Config\XH.Configurations.csproj">
       <Project>{50e442fe-fad3-4b30-9590-749db8159f66}</Project>
       <Name>XH.Configurations</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Infrastructure\XH.Infrastructure.Persistence.MongoDB\XH.Infrastructure.Persistence.MongoDb.csproj">
-      <Project>{7d656741-3e91-473c-ba4d-5ff615090070}</Project>
-      <Name>XH.Infrastructure.Persistence.MongoDb</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Infrastructure\XH.Infrastructure\XH.Infrastructure.csproj">
       <Project>{3008a7d0-c5ac-4e09-a05c-34785c1a1c67}</Project>
       <Name>XH.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="configs\MongoDBConfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Choose>

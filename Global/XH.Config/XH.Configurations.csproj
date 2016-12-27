@@ -7,8 +7,8 @@
     <ProjectGuid>{50E442FE-FAD3-4B30-9590-749DB8159F66}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XH.Config</RootNamespace>
-    <AssemblyName>XH.Config</AssemblyName>
+    <RootNamespace>XH.Configurations</RootNamespace>
+    <AssemblyName>XH.Configurations</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -38,6 +38,10 @@
       <HintPath>..\..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,9 +52,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DIConfig.cs" />
+    <Compile Include="Configuration\ConfigurationValidationResult.cs" />
+    <Compile Include="Configuration\IConfiguration.cs" />
+    <Compile Include="Configuration\IConfigurationProvider.cs" />
+    <Compile Include="Configuration\LocalConfigurationProvider.cs" />
+    <Compile Include="Configuration\MongoDBConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebApiConfigurationRegistrar.cs" />
+    <Compile Include="ConfigurationModuleRegistrar.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -65,6 +73,9 @@
       <Project>{3008A7D0-C5AC-4E09-A05C-34785C1A1C67}</Project>
       <Name>XH.Infrastructure</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AutoMapperConfiguration\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

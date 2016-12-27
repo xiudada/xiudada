@@ -10,5 +10,7 @@ namespace XH.Infrastructure.Dependency
     public interface IIocManager
     {
         IContainer IocContainer { get; set; }
+
+        void Register(Action<ContainerBuilder, IDependencyRegistrarContext> buildAction);
     }
 }

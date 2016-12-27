@@ -7,11 +7,7 @@ using XH.Infrastructure.Command;
 
 namespace XH.Commands.Articles.Commands
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public class CreateArticleCommand : CreateOrUpdateArticleCommandBase
+    public class CreateOrUpdateArticleCommandBase : CommandBase
     {
-        public string Title { get; set; }
     }
 }

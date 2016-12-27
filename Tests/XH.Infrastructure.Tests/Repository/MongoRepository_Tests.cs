@@ -8,7 +8,7 @@ using XH.Infrastructure.Dependency;
 using Autofac;
 using XH.Infrastructure.Domain.Repositories;
 using XH.Domain.Catalogs.Models;
-using XH.Config;
+using XH.Configurations;
 
 namespace XH.Infrastructure.Tests.Repository
 {
@@ -19,7 +19,7 @@ namespace XH.Infrastructure.Tests.Repository
         [TestMethod]
         public void IocManager_Constructor_Test()
         {
-            Type t = typeof(WebApiConfigurationRegistrar);
+            Type t = typeof(ConfigurationModuleRegistrar);
             IocManager.Instance.Initialize();
             IIocManager iocManager = IocManager.Instance;
 
