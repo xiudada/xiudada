@@ -1,8 +1,7 @@
 ﻿xiudadaApp.controller("articlesController", ["$scope", "$state", "articlesResource", function ($scope, $state, articlesResource) {
-    console.log($state);
     var state = $state.current.name;
-
-    if (state = "articles:overview") {
+    console.log(state);
+    if (state == "articles:overview") {
         articlesResource.list({ page: 1, pageSize: 15 }, function (data) {
             $scope.articles = data.Items;
         }, function () {
@@ -15,10 +14,13 @@
     } else {
         // add
         // detail
-        console.log($state);
+        var isEdit=state=="articles:edit";
+        articlesResource.get({ id: $state.params.id }, function (data) {
+            $scope.vm = data;
+        });
 
         $scope.submit = function () {
-            articlesResource.create($scope.vm, function (data) {
+            articlesResource[isEdit?"update":"create"]($scope.vm, function (data) {
                 alert("success");
             }, function () {
 

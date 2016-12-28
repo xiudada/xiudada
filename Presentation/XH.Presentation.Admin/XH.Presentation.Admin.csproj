@@ -3757,25 +3757,6 @@
     <Content Include="assets\global\plugins\horizontal-timeline\horizontal-timeline.min.js" />
     <Content Include="assets\global\plugins\horizontal-timeline\horozontal-timeline.js" />
     <Content Include="assets\global\plugins\horizontal-timeline\horozontal-timeline.min.js" />
-    <Content Include="assets\global\plugins\icheck\demo\css\banner.jpg" />
-    <Content Include="assets\global\plugins\icheck\demo\css\custom.css" />
-    <Content Include="assets\global\plugins\icheck\demo\css\icheck.png" />
-    <Content Include="assets\global\plugins\icheck\demo\css\ie\arrow-bottom.png" />
-    <Content Include="assets\global\plugins\icheck\demo\css\ie\arrow-top.png" />
-    <Content Include="assets\global\plugins\icheck\demo\css\ie\header-line.png" />
-    <Content Include="assets\global\plugins\icheck\demo\css\ie\icon-fork.png" />
-    <Content Include="assets\global\plugins\icheck\demo\css\ie\icon-github.png" />
-    <Content Include="assets\global\plugins\icheck\demo\css\ie\icon-lab.png" />
-    <Content Include="assets\global\plugins\icheck\demo\css\ie\icon-options.png" />
-    <Content Include="assets\global\plugins\icheck\demo\css\ie\icon-star.png" />
-    <Content Include="assets\global\plugins\icheck\demo\css\montserrat-bold.svg" />
-    <Content Include="assets\global\plugins\icheck\demo\css\montserrat-regular.svg" />
-    <Content Include="assets\global\plugins\icheck\demo\css\normalize.css" />
-    <Content Include="assets\global\plugins\icheck\demo\index.html" />
-    <Content Include="assets\global\plugins\icheck\demo\js\custom.js" />
-    <Content Include="assets\global\plugins\icheck\demo\js\custom.min.js" />
-    <Content Include="assets\global\plugins\icheck\demo\js\jquery.js" />
-    <Content Include="assets\global\plugins\icheck\demo\js\zepto.js" />
     <Content Include="assets\global\plugins\icheck\icheck.js" />
     <Content Include="assets\global\plugins\icheck\icheck.min.js" />
     <Content Include="assets\global\plugins\icheck\skins\all.css" />
@@ -5900,13 +5881,6 @@
     <Content Include="assets\global\plugins\icheck\.gitignore" />
     <Content Include="assets\global\plugins\icheck\bower.json" />
     <Content Include="assets\global\plugins\icheck\CHANGELOG.md" />
-    <Content Include="assets\global\plugins\icheck\demo\css\custom.styl" />
-    <Content Include="assets\global\plugins\icheck\demo\css\montserrat-bold.eot" />
-    <Content Include="assets\global\plugins\icheck\demo\css\montserrat-bold.ttf" />
-    <Content Include="assets\global\plugins\icheck\demo\css\montserrat-bold.woff" />
-    <Content Include="assets\global\plugins\icheck\demo\css\montserrat-regular.eot" />
-    <Content Include="assets\global\plugins\icheck\demo\css\montserrat-regular.ttf" />
-    <Content Include="assets\global\plugins\icheck\demo\css\montserrat-regular.woff" />
     <Content Include="assets\global\plugins\icheck\icheck.jquery.json" />
     <Content Include="assets\global\plugins\icheck\README.md" />
     <Content Include="assets\global\plugins\jcrop\README.md" />
@@ -6106,6 +6080,9 @@
     <Content Include="assets\layouts\layout7\img\Thumbs.db" />
     <Content Include="assets\pages\media\blog\Thumbs.db" />
     <Content Include="assets\pages\media\pages\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\release.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
