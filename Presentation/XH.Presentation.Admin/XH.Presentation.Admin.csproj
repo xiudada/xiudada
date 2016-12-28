@@ -5699,6 +5699,7 @@
     <Content Include="Scripts\app\directives\directives.js" />
     <Content Include="Scripts\app\resources\articlesResource.js" />
     <Content Include="Scripts\app\router.js" />
+    <Content Include="Scripts\app\services\urlServices.js" />
     <Content Include="Scripts\app\utility.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -5709,6 +5710,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Templates\articles\detail.tpl.html" />
     <Content Include="Templates\articles\overview.tpl.html" />
     <Content Include="Templates\home\dashboard.tpl.html" />
     <Content Include="Templates\layout\footer.html" />
@@ -5733,7 +5735,6 @@
     <Folder Include="assets\apps\img\" />
     <Folder Include="assets\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\app\services\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

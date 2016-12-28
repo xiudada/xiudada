@@ -8,13 +8,25 @@
         </div>
     </div>
     <div class="portlet-body">
-        <ul>
-            <li ng-repeat="item in articles">
-                <div>
-                    <h2>{{item.Title}}</h2>
-                    <div>{{item.Content}}</div>
-                </div>
-            </li>
-        </ul>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in articles">
+                    <td>{{item.Title}}</td>
+                    <td>{{item.Content}}</td>
+                    <td>
+                        <button class="btn btn-primary btn-xs" ng-click="goToDetail(item.Id)">
+                            <i class="fa fa-edit"></i> Edit
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>

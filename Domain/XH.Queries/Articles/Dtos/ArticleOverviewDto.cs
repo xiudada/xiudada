@@ -8,6 +8,8 @@ namespace XH.Queries.Articles.Dtos
 {
     public class ArticleOverviewDto
     {
+        public string Id { get; set; }
+
         public string Title { get; set; }
 
         public string Content { get; set; }

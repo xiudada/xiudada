@@ -36,7 +36,23 @@ function ($stateProvider, $urlRouterProvider, $locationProvider) {
                 config: {
                     url: "/articles/overview",
                     templateUrl: "/Templates/articles/overview.tpl.html",
-                    controller:"articlesController"
+                    controller: "articlesController"
+                }
+            },
+            {
+                name: "articles:add",
+                config: {
+                    url: "/articles/add",
+                    templateUrl: "/Templates/articles/detail.tpl.html",
+                    controller: "articlesController"
+                }
+            },
+            {
+                name: "articles:edit",
+                config: {
+                    url: "/articles/edit/:id",
+                    templateUrl: "/Templates/articles/detail.tpl.html",
+                    controller: "articlesController"
                 }
             }
         ]
