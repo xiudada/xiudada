@@ -52,6 +52,7 @@
     <Compile Include="Articles\CommandHandlers\ArticleCommandHandler.cs" />
     <Compile Include="Articles\Commands\CreateArticleCommand.cs" />
     <Compile Include="Articles\Commands\CreateOrUpdateArticleCommandBase.cs" />
+    <Compile Include="Articles\Commands\CreateOrUpdateCommandSEOMetaData.cs" />
     <Compile Include="Articles\Commands\UpdateArticleCommand.cs" />
     <Compile Include="Articles\Configs\AritclesMapperRegistrar.cs" />
     <Compile Include="CommandModuleDependencyRegistrar.cs" />

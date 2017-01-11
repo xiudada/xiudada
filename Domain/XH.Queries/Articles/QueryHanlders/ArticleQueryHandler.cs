@@ -30,11 +30,8 @@ namespace XH.Queries.Articles.QueryHanlders
 
         public ArticleDto Handle(GetArticleQuery query)
         {
-            return new ArticleDto
-            {
-                Id = query.Id,
-                Title = "test article"
-            };
+            var article = _articleRepository.Get(query.Id);
+            return _mapper.Map<ArticleDto>(article);
         }
 
         public PagedList<ArticleOverviewDto> Handle(ListArticlesQuery query)

@@ -52,6 +52,7 @@
     <Compile Include="Articles\Configs\AritclesMapperRegistrar.cs" />
     <Compile Include="Articles\Dtos\ArticleDto.cs" />
     <Compile Include="Articles\Dtos\ArticleOverviewDto.cs" />
+    <Compile Include="Articles\Dtos\SEOMetaDataDto.cs" />
     <Compile Include="Articles\Queries\GetArticleQuery.cs" />
     <Compile Include="Articles\Queries\ListArticlesQuery.cs" />
     <Compile Include="Articles\QueryHanlders\ArticleQueryHandler.cs" />

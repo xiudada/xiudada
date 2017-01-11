@@ -178,6 +178,7 @@
     <Compile Include="Models\Articles\CreateArticleRequest.cs" />
     <Compile Include="Models\Articles\CreateOrUpdateArticleRequestBase.cs" />
     <Compile Include="Models\Articles\ListArticlesRequest.cs" />
+    <Compile Include="Models\Articles\SEOMetaDataRequestModel.cs" />
     <Compile Include="Models\Articles\UpdateArticleRequest.cs" />
     <Compile Include="Models\Install\UpdateMongoDbConfigurationRequest.cs" />
     <Compile Include="Models\Shared\ListRequestBase.cs" />

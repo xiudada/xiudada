@@ -3,6 +3,7 @@ var xiudadaApp = angular.module("xiudadaApp", [
     "ui.router",
     "ui.bootstrap",
     "oc.lazyLoad",
+    "ui.tinymce",
     "ngSanitize",
     "ngResource"
 ]);
@@ -47,4 +48,49 @@ xiudadaApp.constant("siteConfiguration", {
 xiudadaApp.run(["$rootScope", "settings", "$state", function ($rootScope, settings, $state) {
     $rootScope.$state = $state; // state to be accessed from view
     $rootScope.$settings = settings; // state to be accessed from view
+
+    // tinymce options
+    $rootScope.tinymceOptions = {
+        selector: 'textarea',
+        height: 300,
+        plugins: [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table contextmenu paste'
+        ],
+        contextmenu: "cut copy paste | link image inserttable | cell row column deletetable",
+        browser_spellcheck: true,
+        //content_css: "css/content.css",
+        toolbar: "insertfile undo redo | styleselect | bold italic forecolor backcolor | fontselect | fontsizeselect | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | preview",
+        relative_urls: false, //required for images display
+        force_br_newlines: false,
+        force_p_newlines: false,
+        forced_root_block: '',
+        convert_urls: false,
+        resize: "both",
+        valid_children: "+body[style],+body[link],+body[script],",
+        extended_valid_elements: "link[href|rel|type],script[src|type],style[type],iframe[src|style|width|height|scrolling|marginwidth|marginheight|frameborder]",
+        verify_html: false,
+        valid_elements: '*[*]',
+        style_formats: [
+            { title: 'Bold text', inline: 'b' },
+            { title: 'Red text', inline: 'span', styles: { color: '#ff0000' } },
+            { title: 'Red header', block: 'h1', styles: { color: '#ff0000' } },
+            { title: 'Example 1', inline: 'span', classes: 'example1' },
+            { title: 'Example 2', inline: 'span', classes: 'example2' },
+            { title: 'Table styles' },
+            { title: 'Table row 1', selector: 'tr', classes: 'tablerow1' }
+        ],
+        setup: function (ed) {
+            ed.on('BeforeSetContent', function (e) {
+                e.format = 'raw';
+            });
+        },
+        init_instance_callback: function (editor) {
+            editor.on('PastePreProcess', function (e) {
+                console.log(e);
+                //e.content += 'My custom content!';
+            });
+        }
+    }
 }]);

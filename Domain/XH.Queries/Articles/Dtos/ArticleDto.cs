@@ -13,5 +13,19 @@ namespace XH.Queries.Articles.Dtos
         public string Title { get; set; }
 
         public string Content { get; set; }
+
+        public string Author { get; set; }
+
+        public string From { get; set; }
+
+        public string SourceUrl { get; set; }
+
+        public string Image { get; set; }
+
+        public bool IsPublished { get; set; }
+
+        public DateTime? UtcPublishDate { get; set; }
+
+        public SEOMetaDataDto Meta { get; set; }
     }
 }

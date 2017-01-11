@@ -17,6 +17,18 @@ namespace XH.Domain.Catalogs.Models
 
         public virtual string Content { get; set; }
 
+        public virtual string Author { get; set; }
+
+        public virtual string From { get; set; }
+
+        public virtual string SourceUrl { get; set; }
+
+        public virtual string Image { get; set; }
+
+        public virtual bool IsPublished { get; set; }
+
+        public virtual DateTime? UtcPublishDate { get; set; }
+
         public virtual SEOMetaData Meta { get; set; }
     }
 }

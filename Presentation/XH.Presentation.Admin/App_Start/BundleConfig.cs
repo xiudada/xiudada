@@ -23,6 +23,7 @@ namespace XH.Presentation.Admin
                 "~/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css",
                 "~/assets/global/css/components.min.css",
                 "~/assets/global/css/plugins.min.css",
+                "~/assets/global/plugins/bootstrap-toastr/toastr.min.css",
                 "~/assets/layouts/layout/css/layout.min.css",
                 "~/assets/layouts/layout/css/themes/darkblue.min.css",
                 "~/assets/layouts/layout/css/custom.min.css",
@@ -45,6 +46,7 @@ namespace XH.Presentation.Admin
                 "~/assets/global/plugins/jquery.blockui.min.js",
                 "~/assets/global/plugins/js.cookie.min.js",
                 "~/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js",
+                "~/assets/global/plugins/bootstrap-toastr/toastr.min.js",
                 "~/assets/global/plugins/angularjs/angular.min.js",
                 "~/assets/global/plugins/angularjs/angular-sanitize.min.js",
                 "~/assets/global/plugins/angularjs/angular-touch.min.js",
@@ -55,7 +57,9 @@ namespace XH.Presentation.Admin
                 "~/assets/global/scripts/app.min.js",
                 "~/assets/layouts/layout/scripts/layout.min.js",
                 "~/assets/layouts/global/scripts/quick-sidebar.min.js",
-                "~/assets/layouts/global/scripts/quick-nav.min.js"));
+                "~/assets/layouts/global/scripts/quick-nav.min.js",
+                "~/assets/global/plugins/angularjs/plugins/ui-tinymce/tinymce/tinymce.min.js",
+                "~/assets/global/plugins/angularjs/plugins/ui-tinymce/tinymce.min.js"));
 
             bundles.Add(new ScriptBundle("~/scripts/angularjs/app").IncludeDirectory("~/scripts/app", "*.js", true));
 

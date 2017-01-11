@@ -7,6 +7,7 @@ using AutoMapper;
 using XH.Infrastructure.Mapper;
 using XH.Queries.Articles.Dtos;
 using XH.Domain.Catalogs.Models;
+using XH.Domain.Seo.Models;
 
 namespace XH.Queries.Articles.Configs
 {
@@ -20,6 +21,7 @@ namespace XH.Queries.Articles.Configs
         {
             cfg.CreateMap<Article, ArticleDto>();
             cfg.CreateMap<Article, ArticleOverviewDto>();
+            cfg.CreateMap<SEOMetaData, SEOMetaDataDto>();
         }
     }
 }

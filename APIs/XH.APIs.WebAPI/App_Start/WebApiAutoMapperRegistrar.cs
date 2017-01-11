@@ -15,7 +15,8 @@ namespace XH.APIs.WebAPI.App_Start
         public void Register(IMapperConfigurationExpression cfg)
         {
             cfg.CreateMap<CreateArticleRequest, CreateArticleCommand>();
-
+            cfg.CreateMap<UpdateArticleRequest, UpdateArticleCommand>();
+            cfg.CreateMap<SEOMetaDataRequestModel, CreateOrUpdateCommandSEOMetaData>();
             cfg.CreateMap<ListArticlesRequest, ListArticlesQuery>();
         }
     }

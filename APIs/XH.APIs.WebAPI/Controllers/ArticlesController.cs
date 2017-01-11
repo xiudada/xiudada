@@ -100,7 +100,7 @@ namespace XH.APIs.WebAPI.Controllers
         [SwaggerResponse(200, "Success")]
         public IHttpActionResult CreateArticle(UpdateArticleRequest request)
         {
-            var command = _mapper.Map<CreateArticleCommand>(request);
+            var command = _mapper.Map<UpdateArticleCommand>(request);
             _commandBus.Send(command);
 
             return Ok();
