@@ -6,9 +6,13 @@
         <div class="caption font-green-sharp">
             <i class="fa fa-list font-green-sharp"></i> Article list
         </div>
+        <div class="actions">
+            <div class="btn-group btn-group-devided" data-toggle="buttons">
+                <button-add ng-click="addArticle()"> 添加 </button-add>
+            </div>
+        </div>
     </div>
     <div class="portlet-body">
-        <button class="btn btn-primary btn-sm" type="button" ng-click="addArticle()"><i class="fa fa-plus"></i> 创建</button>
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
@@ -24,9 +28,7 @@
                     <td>{{item.From}}</td>
                     <td>{{item.IsPublished}}</td>
                     <td>
-                        <button class="btn btn-primary btn-xs" ng-click="goToDetail(item.Id)">
-                            <i class="fa fa-edit"></i> Edit
-                        </button>
+                        <button-edit ng-click="goToDetail(item.Id)">编辑 </button-edit>
                     </td>
                 </tr>
             </tbody>

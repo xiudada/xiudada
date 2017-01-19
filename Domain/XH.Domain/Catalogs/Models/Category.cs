@@ -17,9 +17,11 @@ namespace XH.Domain.Catalogs.Models
 
         public virtual string Code { get; set; }
 
+        public virtual string Slug { get; set; }
+
         public virtual bool IsActive { get; set; }
 
-        public virtual string ParentCategoryId { get; set; }
+        public virtual string ParentId { get; set; }
 
         public virtual SEOMetaData Meta { get; set; }
     }

@@ -24,7 +24,8 @@ namespace XH.Configurations
 
         public ConfigurationModuleRegistrar()
         {
-            _typeFinder = IocManager.Instance.IocContainer.Resolve<ITypeFinder>();
+            _typeFinder = new WebAppTypeFinder();
+            //IocManager.Instance.IocContainer.Resolve<ITypeFinder>();
         }
 
         public void Register(ContainerBuilder builder, IDependencyRegistrarContext context)
@@ -49,12 +50,15 @@ namespace XH.Configurations
             var mapperRegistrarTypes = _typeFinder.FindClassesOfType<IAutoMapperRegistrar>(true);
             Mapper.Initialize(cfg =>
             {
-                foreach (var type in mapperRegistrarTypes)
+                using (var scope = container.BeginLifetimeScope())
                 {
-                    object registrar = null;
-                    if (container.TryResolve(type, out registrar))
+                    foreach (var type in mapperRegistrarTypes)
                     {
-                        ((IAutoMapperRegistrar)registrar).Register(cfg);
+                        object registrar = null;
+                        if (container.TryResolve(type, out registrar))
+                        {
+                            ((IAutoMapperRegistrar)registrar).Register(cfg);
+                        }
                     }
                 }
             });

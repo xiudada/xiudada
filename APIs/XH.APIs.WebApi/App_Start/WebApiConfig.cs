@@ -5,6 +5,7 @@ using System.Net.Http.Formatting;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using Newtonsoft.Json.Converters;
+using XH.Infrastructure.Web.Filters;
 
 namespace XH.APIs.WebAPI
 {
@@ -30,7 +31,7 @@ namespace XH.APIs.WebAPI
 
         private static void RegisterFilters(HttpConfiguration config)
         {
-            
+            config.Filters.Add(new ValidateModelStateFilterAttribute());
         }
 
         private static void RegisterRoutes(HttpConfiguration config)

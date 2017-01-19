@@ -82,6 +82,7 @@
     <Compile Include="Bus\InMemoryCommandBus.cs" />
     <Compile Include="Bus\IQueryBus.cs" />
     <Compile Include="Event\IEventHandler.cs" />
+    <Compile Include="Exceptions\DomainException.cs" />
     <Compile Include="Exceptions\EntityNotFoundException.cs" />
     <Compile Include="Exceptions\XHException.cs" />
     <Compile Include="Extensions\CacheExtensions.cs" />

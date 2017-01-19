@@ -23,23 +23,23 @@ namespace XH.APIs.WebAPI.Controllers
             _configurationProvider = configurationProvider;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request"></param>
-        /// <returns></returns>
-        [HttpPost]
-        [Route("mongodb")]
-        public IHttpActionResult UpdateMongoDBConfiguration(UpdateMongoDbConfigurationRequest request)
-        {
-            _configurationProvider.SaveConfiguration(new MongoDBConfig
-            {
-                ConnectionString = request.ConnectionString,
-                DatabaseName = request.DatabaseName
-            });
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="request"></param>
+        ///// <returns></returns>
+        //[HttpPost]
+        //[Route("mongodb")]
+        //public IHttpActionResult UpdateMongoDBConfiguration(UpdateMongoDbConfigurationRequest request)
+        //{
+        //    _configurationProvider.SaveConfiguration(new MongoDBConfig
+        //    {
+        //        ConnectionString = request.ConnectionString,
+        //        DatabaseName = request.DatabaseName
+        //    });
 
-            return Ok();
-        }
+        //    return Ok();
+        //}
 
 
         [HttpGet]

@@ -5745,21 +5745,23 @@
     <Content Include="assets\pages\scripts\ui-tree.min.js" />
     <Content Include="assets\pages\scripts\widgets.js" />
     <Content Include="assets\pages\scripts\widgets.min.js" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\controllers\appController.js" />
-    <Content Include="Scripts\app\controllers\articlesController.js" />
+    <Content Include="Scripts\app\controllers\articles\articlesDetailController.js" />
+    <Content Include="Scripts\app\controllers\articles\articlesOverviewController.js" />
+    <Content Include="Scripts\app\controllers\categories\categoryDetailController.js" />
+    <Content Include="Scripts\app\controllers\categories\categoriesOverviewController.js" />
     <Content Include="Scripts\app\controllers\dashboardController.js" />
     <Content Include="Scripts\app\controllers\layoutController.js" />
+    <Content Include="Scripts\app\directives\buttonDirectives.js" />
     <Content Include="Scripts\app\directives\directives.js" />
     <Content Include="Scripts\app\resources\articlesResource.js" />
+    <Content Include="Scripts\app\resources\categoriesResource.js" />
     <Content Include="Scripts\app\router.js" />
+    <Content Include="Scripts\app\services\animationService.js" />
     <Content Include="Scripts\app\services\notifyServices.js" />
     <Content Include="Scripts\app\services\urlServices.js" />
     <Content Include="Scripts\app\utility.js" />
@@ -5767,13 +5769,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Templates\articles\detail.tpl.html" />
     <Content Include="Templates\articles\overview.tpl.html" />
+    <Content Include="Templates\categories\detail.tpl.html" />
     <Content Include="Templates\home\dashboard.tpl.html" />
     <Content Include="Templates\layout\footer.html" />
     <Content Include="Templates\layout\header.html" />
@@ -6171,6 +6170,7 @@
     <Content Include="assets\global\plugins\angularjs\plugins\ui-tinymce\tinymce\skins\lightgray\fonts\tinymce.ttf" />
     <Content Include="assets\global\plugins\angularjs\plugins\ui-tinymce\tinymce\skins\lightgray\fonts\tinymce.woff" />
     <None Include="Properties\PublishProfiles\release.pubxml" />
+    <Content Include="Templates\categories\overview.html" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

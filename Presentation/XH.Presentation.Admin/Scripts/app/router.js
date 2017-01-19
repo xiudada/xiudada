@@ -36,7 +36,7 @@ function ($stateProvider, $urlRouterProvider, $locationProvider) {
                 config: {
                     url: "/articles/overview",
                     templateUrl: "/Templates/articles/overview.tpl.html",
-                    controller: "articlesController"
+                    controller: "articlesOverviewController"
                 }
             },
             {
@@ -44,7 +44,7 @@ function ($stateProvider, $urlRouterProvider, $locationProvider) {
                 config: {
                     url: "/articles/add",
                     templateUrl: "/Templates/articles/detail.tpl.html",
-                    controller: "articlesController"
+                    controller: "articlesDetailController"
                 }
             },
             {
@@ -52,7 +52,7 @@ function ($stateProvider, $urlRouterProvider, $locationProvider) {
                 config: {
                     url: "/articles/edit/:id",
                     templateUrl: "/Templates/articles/detail.tpl.html",
-                    controller: "articlesController"
+                    controller: "articlesDetailController"
                 }
             }
         ]

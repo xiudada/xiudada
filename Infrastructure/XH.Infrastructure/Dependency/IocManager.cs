@@ -29,16 +29,21 @@ namespace XH.Infrastructure.Dependency
         {
             if (!_isInitialized)
             {
-                ContainerBuilder containerBuilder = new ContainerBuilder();
+                ContainerBuilder builder = new ContainerBuilder();
                 _registrarContext = new DependencyRegistrarContext(this);
-                IocContainer = RegisterCore(containerBuilder, _registrarContext);
-                // Get all registrars;
+                builder.Register(component => this).As<IIocManager>().SingleInstance();
+                builder.RegisterInstance(_registrarContext).As<IDependencyRegistrarContext>();
+                builder.RegisterInstance(_typeFinder).As<ITypeFinder>();
+
+                IocContainer = builder.Build();
+
+                // Get all registrars
                 RegisterDependencies();
 
-                var container = new ContainerBuilder();
-                buildAction?.Invoke(container, _registrarContext);
+                builder = new ContainerBuilder();
+                buildAction?.Invoke(builder, _registrarContext);
 
-                container.Update(IocContainer);
+                builder.Update(IocContainer);
                 _isInitialized = true;
             }
         }
@@ -50,24 +55,14 @@ namespace XH.Infrastructure.Dependency
             builder.Update(IocContainer);
         }
 
-        private IContainer RegisterCore(ContainerBuilder containerBuilder, IDependencyRegistrarContext context)
-        {
-            // Register self
-            containerBuilder.Register(component => this).As<IIocManager>().SingleInstance();
-            containerBuilder.RegisterInstance(context).As<IDependencyRegistrarContext>();
-            containerBuilder.RegisterInstance(_typeFinder).As<ITypeFinder>();
-
-            return containerBuilder.Build();
-        }
-
         private void RegisterDependencies()
         {
-            
             var registrarTypes = _typeFinder.FindClassesOfType<IDependencyRegistrar>(true);
             List<IDependencyRegistrar> registrars = new List<IDependencyRegistrar>();
 
             foreach (var type in registrarTypes)
             {
+                // TODO: what if dependencyRegistrar has dependencies ?
                 registrars.Add((IDependencyRegistrar)Activator.CreateInstance(type));
             }
 
@@ -76,6 +71,7 @@ namespace XH.Infrastructure.Dependency
             {
                 var containerBuilder = new ContainerBuilder();
                 registrar.Register(containerBuilder, _registrarContext);
+
                 containerBuilder.Update(IocContainer);
             }
         }

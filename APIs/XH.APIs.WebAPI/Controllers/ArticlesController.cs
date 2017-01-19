@@ -13,6 +13,7 @@ using AutoMapper;
 using XH.Commands.Articles.Commands;
 using XH.Queries.Articles;
 using XH.Infrastructure.Paging;
+using XH.Infrastructure.Web.Filters;
 
 namespace XH.APIs.WebAPI.Controllers
 {
@@ -72,6 +73,18 @@ namespace XH.APIs.WebAPI.Controllers
 
             var dto = _queryBus.Send<GetArticleQuery, ArticleDto>(query);
             return Ok(dto);
+        }
+
+        /// <summary>
+        /// Get new empty article
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("getnew")]
+        [SwaggerResponse(200, "Success", typeof(ArticleDto))]
+        public IHttpActionResult GetNewArticle()
+        {
+            return Ok(new ArticleDto());
         }
 
         /// <summary>

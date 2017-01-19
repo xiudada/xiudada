@@ -170,8 +170,10 @@
     <Compile Include="App_Start\WebApiDependencyRegistrar.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\Base\ApiControllerBase.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\ConfigurationsController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
+    <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -180,6 +182,9 @@
     <Compile Include="Models\Articles\ListArticlesRequest.cs" />
     <Compile Include="Models\Articles\SEOMetaDataRequestModel.cs" />
     <Compile Include="Models\Articles\UpdateArticleRequest.cs" />
+    <Compile Include="Models\Categories\CreateCategoryRequest.cs" />
+    <Compile Include="Models\Categories\ListCategoriesRequest.cs" />
+    <Compile Include="Models\Categories\UpdateCategoryRequest.cs" />
     <Compile Include="Models\Install\UpdateMongoDbConfigurationRequest.cs" />
     <Compile Include="Models\Shared\ListRequestBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -219,6 +224,10 @@
     <ProjectReference Include="..\..\Infrastructure\XH.Infrastructure.Persistence.MongoDB\XH.Infrastructure.Persistence.MongoDb.csproj">
       <Project>{7D656741-3E91-473C-BA4D-5FF615090070}</Project>
       <Name>XH.Infrastructure.Persistence.MongoDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\XH.Infrastructure.Web\XH.Infrastructure.Web.csproj">
+      <Project>{8E5310BC-43A3-4FBD-913D-54BCBAB74DE2}</Project>
+      <Name>XH.Infrastructure.Web</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Infrastructure\XH.Infrastructure\XH.Infrastructure.csproj">
       <Project>{3008A7D0-C5AC-4E09-A05C-34785C1A1C67}</Project>

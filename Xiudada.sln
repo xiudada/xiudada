@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XH.Config.Tests", "Tests\XH
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XH.Events", "Domain\XH.Events\XH.Events.csproj", "{A0187E2E-A3EA-4BE1-A748-99BDE7348638}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XH.Infrastructure.Web", "Infrastructure\XH.Infrastructure.Web\XH.Infrastructure.Web.csproj", "{8E5310BC-43A3-4FBD-913D-54BCBAB74DE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -175,6 +177,14 @@ Global
 		{A0187E2E-A3EA-4BE1-A748-99BDE7348638}.Production|Any CPU.Build.0 = Release|Any CPU
 		{A0187E2E-A3EA-4BE1-A748-99BDE7348638}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0187E2E-A3EA-4BE1-A748-99BDE7348638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E5310BC-43A3-4FBD-913D-54BCBAB74DE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E5310BC-43A3-4FBD-913D-54BCBAB74DE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E5310BC-43A3-4FBD-913D-54BCBAB74DE2}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E5310BC-43A3-4FBD-913D-54BCBAB74DE2}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{8E5310BC-43A3-4FBD-913D-54BCBAB74DE2}.Production|Any CPU.ActiveCfg = Release|Any CPU
+		{8E5310BC-43A3-4FBD-913D-54BCBAB74DE2}.Production|Any CPU.Build.0 = Release|Any CPU
+		{8E5310BC-43A3-4FBD-913D-54BCBAB74DE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E5310BC-43A3-4FBD-913D-54BCBAB74DE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -195,5 +205,6 @@ Global
 		{D5870151-F74B-49C3-9256-6DC74640D676} = {858E1AEC-5C1C-440C-A442-EF2140693850}
 		{0A7FD463-E2F8-4E25-8384-1988B88DE098} = {8B771B57-F648-40FB-B970-2E7AE95625A5}
 		{A0187E2E-A3EA-4BE1-A748-99BDE7348638} = {858E1AEC-5C1C-440C-A442-EF2140693850}
+		{8E5310BC-43A3-4FBD-913D-54BCBAB74DE2} = {A3061022-DE81-4B20-9BB6-E747DF0DE807}
 	EndGlobalSection
 EndGlobal
