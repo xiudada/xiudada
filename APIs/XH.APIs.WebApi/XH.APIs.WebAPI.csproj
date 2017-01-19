@@ -180,7 +180,8 @@
     <Compile Include="Models\Articles\CreateArticleRequest.cs" />
     <Compile Include="Models\Articles\CreateOrUpdateArticleRequestBase.cs" />
     <Compile Include="Models\Articles\ListArticlesRequest.cs" />
-    <Compile Include="Models\Articles\SEOMetaDataRequestModel.cs" />
+    <Compile Include="Models\Categories\CreateOrUpdateCategoryRequest.cs" />
+    <Compile Include="Models\Shared\SEOMetaDataRequestModel.cs" />
     <Compile Include="Models\Articles\UpdateArticleRequest.cs" />
     <Compile Include="Models\Categories\CreateCategoryRequest.cs" />
     <Compile Include="Models\Categories\ListCategoriesRequest.cs" />

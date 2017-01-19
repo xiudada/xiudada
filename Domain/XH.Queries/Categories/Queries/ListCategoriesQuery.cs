@@ -12,6 +12,6 @@ namespace XH.Queries.Categories.Queries
     /// </summary>
     public class ListCategoriesQuery : ListQueryBase
     {
-        public string Id { get; set; }
+        public string ParentId { get; set; }
     }
 }

@@ -52,11 +52,17 @@
     <Compile Include="Articles\CommandHandlers\ArticleCommandHandler.cs" />
     <Compile Include="Articles\Commands\CreateArticleCommand.cs" />
     <Compile Include="Articles\Commands\CreateOrUpdateArticleCommandBase.cs" />
-    <Compile Include="Articles\Commands\CreateOrUpdateCommandSEOMetaData.cs" />
+    <Compile Include="Categories\CommandHandlers\CategoriesCommandHandler.cs" />
+    <Compile Include="Categories\Commands\UpdateCategoryCommand.cs" />
+    <Compile Include="Categories\Configs\CategoriesMapperRegistrar.cs" />
+    <Compile Include="Shared\Commands\CreateOrUpdateCommandSEOMetaData.cs" />
     <Compile Include="Articles\Commands\UpdateArticleCommand.cs" />
     <Compile Include="Articles\Configs\AritclesMapperRegistrar.cs" />
+    <Compile Include="Categories\Commands\CreateCategoryCommand.cs" />
+    <Compile Include="Categories\Commands\CreateOrUpdateCategoryCommand.cs" />
     <Compile Include="CommandModuleDependencyRegistrar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shared\Configs\SharedMapperRegistrar.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Infrastructure\XH.Infrastructure\XH.Infrastructure.csproj">

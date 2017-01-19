@@ -1,21 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace XH.APIs.WebAPI.Models.Articles
+namespace XH.Commands.Shared.Commands
 {
-    [DataContract]
-    public class SEOMetaDataRequestModel
+    public class CreateOrUpdateCommandSEOMetaData
     {
-        [DataMember]
         public string Title { get; set; }
 
-        [DataMember]
         public string Description { get; set; }
 
-        [DataMember]
         public string Keywords { get; set; }
     }
 }

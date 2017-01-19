@@ -17,7 +17,6 @@ namespace XH.Commands.Articles.Configs
         {
             cfg.CreateMap<CreateArticleCommand, Article>();
             cfg.CreateMap<UpdateArticleCommand, Article>();
-            cfg.CreateMap<CreateOrUpdateCommandSEOMetaData, SEOMetaData>();
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using XH.Infrastructure.Command;
+using XH.Commands.Shared.Commands;
 
 namespace XH.Commands.Articles.Commands
 {

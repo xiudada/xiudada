@@ -9,6 +9,7 @@ using XH.Commands.Articles.Commands;
 using XH.Commands.Articles.CommandHandlers;
 using XH.Infrastructure.Command;
 using XH.Commands.Articles.Configs;
+using XH.Commands.Categories.Configs;
 
 namespace XH.Commands
 {
@@ -27,6 +28,12 @@ namespace XH.Commands
             builder.RegisterType<ArticleCommandHandler>().As<ICommandHandler<UpdateArticleCommand>>();
 
             builder.RegisterType<AritclesMapperRegistrar>();
+            #endregion
+
+            #region Category
+            builder.RegisterType<CategoriesCommandHandler>
+
+            builder.RegisterType<CategoriesMapperRegistrar>();
             #endregion
         }
     }

@@ -7,8 +7,12 @@ using System.Web.Http;
 using AutoMapper;
 using Swashbuckle.Swagger.Annotations;
 using XH.APIs.WebAPI.Models;
+using XH.APIs.WebAPI.Models.Categories;
+using XH.Commands.Categories.Commands;
 using XH.Infrastructure.Bus;
 using XH.Infrastructure.Paging;
+using XH.Queries.Categories.Dtos;
+using XH.Queries.Categories.Queries;
 
 namespace XH.APIs.WebAPI.Controllers
 {
@@ -41,14 +45,30 @@ namespace XH.APIs.WebAPI.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("list")]
-        [SwaggerResponse(200, "Success", typeof(PagedList<ArticleOverviewDto>))]
-        public IHttpActionResult ListArticles(ListRequestBase request)
+        [SwaggerResponse(200, "Success", typeof(PagedList<CategoryOverviewDto>))]
+        public IHttpActionResult ListArticles(ListCategoriesRequest request)
         {
-            var query = _mapper.Map<ListArticlesQuery>(request);
+            var query = _mapper.Map<ListCategoriesQuery>(request);
 
-            var pagedList = _queryBus.Send<ListArticlesQuery, PagedList<ArticleOverviewDto>>(query);
+            var pagedList = _queryBus.Send<ListCategoriesQuery, PagedList<CategoryOverviewDto>>(query);
 
             return Ok(pagedList);
+        }
+
+        /// <summary>
+        /// Tree
+        /// </summary>
+        /// <param name="parentId"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("tree/{parentId}")]
+        [SwaggerResponse(200, "Success", typeof(IEnumerable<CategoriesTreeNode>))]
+        public IHttpActionResult GetCategoriesTree(string parentId)
+        {
+            var query = new GetCategoriesTreeQuery { RootNodeId = parentId };
+            var result = _queryBus.Send<GetCategoriesTreeQuery, IEnumerable<CategoriesTreeNode>>(query);
+
+            return Ok(result);
         }
 
         /// <summary>
@@ -61,7 +81,7 @@ namespace XH.APIs.WebAPI.Controllers
         [SwaggerResponse(200, "Success")]
         public IHttpActionResult CreateCategory(CreateCategoryRequest request)
         {
-            var command = _mapper.Map<CreateArticleCommand>(request);
+            var command = _mapper.Map<CreateCategoryCommand>(request);
             _commandBus.Send(command);
 
             return Ok();

@@ -15,5 +15,15 @@ namespace XH.Infrastructure.Extensions
         {
             return String.Format(format, args);
         }
+
+        public static bool IsNullOrEmpty(this string str)
+        {
+            return String.IsNullOrEmpty(str);
+        }
+
+        public static bool IsNotNullOrEmpty(this string str)
+        {
+            return !String.IsNullOrEmpty(str);
+        }
     }
 }

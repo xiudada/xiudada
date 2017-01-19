@@ -23,6 +23,8 @@ namespace XH.Domain.Catalogs.Models
 
         public virtual string ParentId { get; set; }
 
+        public virtual int DisplayOrder { get; set; }
+
         public virtual SEOMetaData Meta { get; set; }
     }
 }

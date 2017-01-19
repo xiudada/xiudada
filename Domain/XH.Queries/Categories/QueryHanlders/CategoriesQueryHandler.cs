@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using XH.Domain.Catalogs.Models;
 using XH.Infrastructure.Domain.Repositories;
+using XH.Infrastructure.Extensions;
+using XH.Infrastructure.Paging;
 using XH.Infrastructure.Query;
 using XH.Queries.Categories.Dtos;
 using XH.Queries.Categories.Queries;
@@ -13,8 +16,8 @@ using XH.Queries.Categories.Queries;
 namespace XH.Queries.Categories.QueryHanlders
 {
     public class CategoriesQueryHandler :
-        IQueryHandler<ListCategoriesQuery, IEnumerable<CategoryOverviewDto>>,
-        IQueryHandler<GetCategoriesTreeQuery, CategoriesTree>,
+        IQueryHandler<ListCategoriesQuery, PagedList<CategoryOverviewDto>>,
+        IQueryHandler<GetCategoriesTreeQuery, IEnumerable<CategoriesTreeNode>>,
         IQueryHandler<GetCategoryQuery, CategoryDto>
     {
         private readonly IRepository<Category> _categoryRepository;
@@ -28,19 +31,62 @@ namespace XH.Queries.Categories.QueryHanlders
             _mapper = mapper;
         }
 
-        public IEnumerable<CategoryOverviewDto> Handle(ListCategoriesQuery query)
+        public PagedList<CategoryOverviewDto> Handle(ListCategoriesQuery query)
         {
-            return null;
+            var categories = _categoryRepository.GetAll();
+
+            if (query.ParentId.IsNotNullOrEmpty())
+            {
+                categories = categories.Where(it => it.ParentId == query.ParentId);
+            }
+
+            return categories.Select(it => _mapper.Map<CategoryOverviewDto>(it)).ToPagedList(query.Page, query.PageSize);
         }
 
-        public CategoriesTree Handle(GetCategoriesTreeQuery query)
+        public IEnumerable<CategoriesTreeNode> Handle(GetCategoriesTreeQuery query)
         {
-            return null;
+            var allCategories = _mapper.Map<IEnumerable<CategoryOverviewDto>>(_categoryRepository.GetAllList().ToList());
+            var allNodes = _mapper.Map<IEnumerable<CategoriesTreeNode>>(allCategories);
+            return GetCategoryTreeNodes(query.RootNodeId, allNodes);
         }
 
         public CategoryDto Handle(GetCategoryQuery query)
         {
-            return null;
+            var item = _categoryRepository.Get(query.Id);
+            return _mapper.Map<CategoryDto>(item);
+        }
+
+        private IEnumerable<CategoriesTreeNode> GetCategoryTreeNodes(string rootId, IEnumerable<CategoriesTreeNode> categories)
+        {
+            IEnumerable<CategoriesTreeNode> rootNodes = null;
+
+            if (rootId.IsNotNullOrEmpty())
+            {
+                rootNodes = categories.Where(it => it.ParentId == rootId);
+            }
+            else
+            {
+                rootNodes = categories.Where(it => it.ParentId == null || it.ParentId == "");
+            }
+
+            foreach (var node in rootNodes)
+            {
+                node.ChildNodes = GetCategoryChildNodes(node, categories);
+            }
+
+            return rootNodes;
+        }
+
+        private IEnumerable<CategoriesTreeNode> GetCategoryChildNodes(CategoriesTreeNode node, IEnumerable<CategoriesTreeNode> categories)
+        {
+            IEnumerable<CategoriesTreeNode> childNodes = categories.Where(it => it.ParentId == node.Id);
+
+            foreach (var childNode in childNodes)
+            {
+                childNode.ChildNodes = GetCategoryChildNodes(childNode, categories);
+            }
+
+            return childNodes;
         }
     }
 }

@@ -4,19 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using XH.Domain.Catalogs.Models;
 using XH.Infrastructure.Mapper;
-using XH.Queries.Categories.Dtos;
+using XH.Commands.Categories.Commands;
+using XH.Domain.Catalogs.Models;
 
-namespace XH.Queries.Categories.Configs
+namespace XH.Commands.Categories.Configs
 {
     public class CategoriesMapperRegistrar : IAutoMapperRegistrar
     {
         public void Register(IMapperConfigurationExpression cfg)
         {
-            cfg.CreateMap<Category, CategoryDto>();
-            cfg.CreateMap<Category, CategoryOverviewDto>();
-            cfg.CreateMap<CategoryOverviewDto, CategoriesTreeNode>();
+            cfg.CreateMap<CreateCategoryCommand, Category>();
+            cfg.CreateMap<UpdateCategoryCommand, Category>();
         }
     }
 }
