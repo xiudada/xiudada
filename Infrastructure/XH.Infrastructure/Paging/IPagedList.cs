@@ -9,7 +9,7 @@ namespace XH.Infrastructure.Paging
     /// <summary>
     /// Paged list interface
     /// </summary>
-    public interface IPagedList<T>
+    public interface IPagedList<out T>
     {
         IEnumerable<T> Items { get; }
 

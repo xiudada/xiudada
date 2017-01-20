@@ -10,6 +10,9 @@ using XH.Commands.Articles.CommandHandlers;
 using XH.Infrastructure.Command;
 using XH.Commands.Articles.Configs;
 using XH.Commands.Categories.Configs;
+using XH.Commands.Categories.CommandHandlers;
+using XH.Commands.Categories.Commands;
+using XH.Commands.Shared.Configs;
 
 namespace XH.Commands
 {
@@ -31,10 +34,12 @@ namespace XH.Commands
             #endregion
 
             #region Category
-            builder.RegisterType<CategoriesCommandHandler>
+            builder.RegisterType<CategoriesCommandHandler>().As<ICommandHandler<CreateCategoryCommand>>()
+                                                            .As<ICommandHandler<UpdateCategoryCommand>>();
 
             builder.RegisterType<CategoriesMapperRegistrar>();
             #endregion
+            builder.RegisterType<SharedMapperRegistrar>();
         }
     }
 }

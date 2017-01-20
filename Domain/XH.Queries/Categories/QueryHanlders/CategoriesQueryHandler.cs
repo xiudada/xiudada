@@ -40,7 +40,9 @@ namespace XH.Queries.Categories.QueryHanlders
                 categories = categories.Where(it => it.ParentId == query.ParentId);
             }
 
-            return categories.Select(it => _mapper.Map<CategoryOverviewDto>(it)).ToPagedList(query.Page, query.PageSize);
+            return categories
+                    .Sort(query.SortItems)
+                    .ToPagedList<Category, CategoryOverviewDto>(query.Page, query.PageSize);
         }
 
         public IEnumerable<CategoriesTreeNode> Handle(GetCategoriesTreeQuery query)

@@ -13,13 +13,14 @@ using XH.Infrastructure.Bus;
 using XH.Infrastructure.Paging;
 using XH.Queries.Categories.Dtos;
 using XH.Queries.Categories.Queries;
+using XH.Infrastructure.Web.Filters;
 
 namespace XH.APIs.WebAPI.Controllers
 {
     /// <summary>
     /// 
     /// </summary>
-    [RoutePrefix("articles")]
+    [RoutePrefix("categories")]
     public class CategoriesController : ApiControllerBase
     {
         private readonly IQueryBus _queryBus;
@@ -61,11 +62,11 @@ namespace XH.APIs.WebAPI.Controllers
         /// <param name="parentId"></param>
         /// <returns></returns>
         [HttpGet]
-        [Route("tree/{parentId}")]
+        [Route("tree")]
         [SwaggerResponse(200, "Success", typeof(IEnumerable<CategoriesTreeNode>))]
-        public IHttpActionResult GetCategoriesTree(string parentId)
+        public IHttpActionResult GetCategoriesTree()
         {
-            var query = new GetCategoriesTreeQuery { RootNodeId = parentId };
+            var query = new GetCategoriesTreeQuery { RootNodeId = null };
             var result = _queryBus.Send<GetCategoriesTreeQuery, IEnumerable<CategoriesTreeNode>>(query);
 
             return Ok(result);
@@ -79,9 +80,27 @@ namespace XH.APIs.WebAPI.Controllers
         [HttpPost]
         [Route("")]
         [SwaggerResponse(200, "Success")]
+        [ValidateModelStateFilter]
         public IHttpActionResult CreateCategory(CreateCategoryRequest request)
         {
             var command = _mapper.Map<CreateCategoryCommand>(request);
+            _commandBus.Send(command);
+
+            return Ok();
+        }
+
+        /// <summary>
+        /// Create article
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPut]
+        [Route("")]
+        [SwaggerResponse(200, "Success")]
+        [ValidateModelStateFilter]
+        public IHttpActionResult UpdateCategory(UpdateCategoryRequest request)
+        {
+            var command = _mapper.Map<UpdateCategoryCommand>(request);
             _commandBus.Send(command);
 
             return Ok();

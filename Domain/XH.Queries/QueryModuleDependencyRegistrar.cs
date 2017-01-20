@@ -36,7 +36,7 @@ namespace XH.Queries
             containerBuilder.RegisterType<ArticleQueryHandler>().As<IQueryHandler<ListArticlesQuery, PagedList<ArticleOverviewDto>>>();
 
             // categories
-            containerBuilder.RegisterType<CategoriesQueryHandler>().As<IQueryHandler<ListCategoriesQuery, IEnumerable<CategoryOverviewDto>>>();
+            containerBuilder.RegisterType<CategoriesQueryHandler>().As<IQueryHandler<ListCategoriesQuery, PagedList<CategoryOverviewDto>>>();
             containerBuilder.RegisterType<CategoriesQueryHandler>().As<IQueryHandler<GetCategoryQuery, CategoryDto>>();
             containerBuilder.RegisterType<CategoriesQueryHandler>().As<IQueryHandler<GetCategoriesTreeQuery, IEnumerable<CategoriesTreeNode>>>();
 

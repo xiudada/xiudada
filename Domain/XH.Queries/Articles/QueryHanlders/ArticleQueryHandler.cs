@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using XH.Domain.Catalogs.Models;
 using XH.Infrastructure.Domain.Repositories;
+using XH.Infrastructure.Extensions;
 using XH.Infrastructure.Paging;
 using XH.Infrastructure.Query;
 using XH.Queries.Articles.Dtos;
@@ -36,8 +37,9 @@ namespace XH.Queries.Articles.QueryHanlders
 
         public PagedList<ArticleOverviewDto> Handle(ListArticlesQuery query)
         {
-            var articles = _mapper.Map<IEnumerable<ArticleOverviewDto>>(_articleRepository.GetAll().ToList());
-            return new PagedList<ArticleOverviewDto>(articles, query.Page, query.PageSize, articles.Count());
+            return _articleRepository.GetAll()
+                    .Sort(query.SortItems)
+                    .ToPagedList<Article, ArticleOverviewDto>(query.Page, query.PageSize);
         }
     }
 }
